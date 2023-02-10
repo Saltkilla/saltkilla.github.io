@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KEMENGER MEKTEBI</title>
+    <link rel="stylesheet" href="./css/style.min.css">
+    <script defer src="./js/scripts.min.js"></script>
+</head>
+
+<body class="body">
+
+    <header class="header">
+    <div class="header__container">
+        <img src="./img/header-main-img.png" alt="Ребенок" class="header__main-img">
+    </div>
+    <div class="container">
+        <nav class="navbar">
+            <a class="header__logo" href="#"><img src="./img/logo.png" alt="Логотип"></a>
+            <ul class="menu header__menu">
+                <li class="menu__item"><a href="#about" class="menu__link" data-scroll>О нас</a></li>
+                <li class="menu__item"><a href="#catalog" class="menu__link" data-scroll>Каталог</a></li>
+                <li class="menu__item"><a href="#certificates" class="menu__link" data-scroll>Сертификаты</a></li>
+                <li class="menu__item"><a href="#reviews" class="menu__link" data-scroll>Отзывы</a></li>
+                <li class="menu__item"><a href="#contact" class="menu__link" data-scroll>Контакты</a></li>
+            </ul>
+
+            <div class="header__right">
+                <svg class="header__icon" width="40" height="40" viewBox="0 0 40 40" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="20" cy="20" r="20" />
+                    <g clip-path="url(#clip0_4_16)">
+                        <path
+                            d="M27.5635 23.7424L25.3306 21.5095C24.5332 20.7121 23.1775 21.0311 22.8585 22.0678C22.6193 22.7855 21.8219 23.1842 21.1042 23.0247C19.5093 22.626 17.3562 20.5526 16.9574 18.878C16.7182 18.1602 17.1967 17.3628 17.9144 17.1236C18.9511 16.8046 19.27 15.449 18.4726 14.6515L16.2397 12.4187C15.6018 11.8604 14.6449 11.8604 14.0866 12.4187L12.5715 13.9338C11.0563 15.5287 12.731 19.7552 16.479 23.5032C20.227 27.2511 24.4534 29.0056 26.0483 27.4106L27.5635 25.8955C28.1217 25.2575 28.1217 24.3006 27.5635 23.7424Z" />
+                    </g>
+                    <defs>
+                        <clipPath>
+                            <rect width="16" height="16" transform="translate(12 12)" />
+                        </clipPath>
+                    </defs>
+                </svg>
+                <a class="header__tel" href="tel:87711459826">8 (771) 145-98-26</a>
+            </div>
+
+            <button class="burger">
+                <span class="burger__line"></span>
+            </button>
+        </nav>
+    </div>
+</header>
+
+    <main>
+        <section class="hero">
+    <div class="container hero__container">
+        <div class="hero__content">
+            <h1 class="hero__title"><span>KEMENGER MEKTEBI</span>- центр интеллектуального развития</h1>
+            <p class="hero__dscr">Обучение происходит на казахском и русском языках. При записи на два или более курсов
+                предусмотрена скидка. Запишитесь на бесплатный пробный урок.</p>
+            <button class="hero__btn">Оставить заявку</button>
+        </div>
+        <img src="./img/hero-backimg1.png" alt="Фон" class="hero__backimg1">
+        <img src="./img/hero-backimg2.png" alt="Фон" class="hero__backimg2">
+        <img src="./img/hero-backimg3.png" alt="Фон" class="hero__backimg3">
+        <img src="./img/hero-backimg4.png" alt="Фон" class="hero__backimg4">
+        <img src="./img/hero-backimg5.png" alt="Фон" class="hero__backimg5">
+        <img src="./img/hero-backimg6.png" alt="Фон" class="hero__backimg6">
+
+        <div class="modal-wrapper">
+            <div class="modal">
+                <div class="modal__close"><img src="./img/cancel-img.svg" alt="cancel" width="30px" height="30px"></div>
+                <h2 class="modal__title">Заполните <span>форму</span> и мы обязательно свяжемся с Вами.</h2>
+                <form method="post" id="form" class="modal__form form">
+                    <label class="form__label" for="name-contact">
+                        <input type="text" class="form__input" placeholder="Ваше имя..." name="name" id="name-contact">
+                    </label>
+                    <label class="form__label" for="tel-contact">
+                        <input type="tel" class="form__input" placeholder="Ваш телефон..." name="tel" id="tel-contact">
+                    </label>
+                    <textarea name="comment" class="form__textarea" placeholder="Комментарий..."></textarea>
+                    <button type="submit" class="form__btn">Отправить</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="modal-thanks">
+            <div class="thanks">
+                <div class="thanks__close"><img src="./img/cancel-img.svg" alt="cancel" width="30px" height="30px">
+                </div>
+                <img src="./img/modal-img.svg" alt="Принято" class="thanks__img">
+                <h2 class="thanks__title"><span>Спасибо</span> за заявку</h2>
+                <p class="thanks__dscr">В ближайшее время мы <span>свяжемся</span> с Вами</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+        <section class="about" id="about">
+    <div class="container">
+        <div class="about__top">
+            <h2 class="about__title">В нашем центре работают профессиональные педагоги любящие детей и преданные своему
+                делу. Мы помогаем детям совершенствовать свои интеллекуальные способности чтобы они могли познавать мир
+                и делать его более красивым и добрым. </h2>
+            <img src="./img/about-backimg1.svg" alt="Фон" class="about__img1">
+            <img src="./img/about-backimg2.svg" alt="Фон" class="about__img2">
+            <img src="./img/about-teacher1.png" alt="Урок" class="about__img3">
+            <img src="./img/about-teacher-backimg1.png" alt="Фон" class="about__img4">
+        </div>
+        <div class="about__bottom">
+            <h2 class="about__title about__title--bottom">Наши ученики показывают результат уже с первого месяца работы, мы поддерживаем в нашем центре теплую и дружескую атмосферу Побывав у нас детям обязательно захочется вернуться сюда снова Развивайтесь вместе с нами</h2>
+            <img src="./img/about-backimg3.svg" alt="Фон" class="about__img5">
+            <img src="./img/about-backimg4.svg" alt="Фон" class="about__img6">
+            <img src="./img/about-teacher2.png" alt="Урок" class="about__img7">
+            <img src="./img/about-teacher-backimg2.png" alt="Фон" class="about__img8">
+        </div>
+    </div>
+</section>
+        <section class="directions">
+    <div class="directions__container container">
+        <div class="directions__center directions__center--display ">
+            <img src="./img/directions-img8.png" alt="Ученик" class="directions__img-center">
+            <h2 class="directions__title directions__title--width">Мы развиваем детей с 5 до 16 лет по следующим направлениям</h2>
+        </div>
+        <div class="directions__circle">
+            <img src="./img/directions-img1.svg" alt="Иконка" class="directions__img">
+            <h2 class="directions__title">Ментальная арифметика</h2>
+        </div>
+        <div class="directions__circle">
+            <img src="./img/directions-img2.svg" alt="Иконка" class="directions__img">                     
+            <h2 class="directions__title">Скорочтение</h2>
+        </div>
+        <div class="directions__circle">
+            <img src="./img/directions-img3.svg" alt="Иконка" class="directions__img">
+            <h2 class="directions__title">Подготовка к школе</h2>
+        </div>
+        <div class="directions__circle">
+            <img src="./img/directions-img4.svg" alt="Иконка" class="directions__img">
+            <h2 class="directions__title">Группа продленного дня</h2>
+        </div>
+        <div class="directions__circle">
+            <img src="./img/directions-img5.svg" alt="Иконка" class="directions__img">
+            <h2 class="directions__title">Супер память</h2>
+        </div>
+        <div class="directions__circle">
+            <img src="./img/directions-img6.svg" alt="Иконка" class="directions__img">
+            <h2 class="directions__title">Английский язык</h2>
+        </div>
+        <div class="directions__circle">
+            <img src="./img/directions-img7.svg" alt="Иконка" class="directions__img">
+            <h2 class="directions__title">Каллиграфия</h2>
+        </div>
+        <div class="directions__center">
+            <img src="./img/directions-img8.png" alt="Ученик" class="directions__img-center">
+            <h2 class="directions__title directions__title--width">Мы развиваем детей с 5 до 16 лет по следующим направлениям</h2>
+        </div>
+    </div>
+</section>
+
+
+        <section class="catalog" id="catalog">
+    <div class="container catalog__container">
+        <img src="./img/catalog-img1.svg" alt="Фон" class="catalog__img1">
+        <img src="./img/catalog-img2.svg" alt="Фон" class="catalog__img2">
+        <h2 class="catalog__title-main">Каталог</h2>
+        <div class="swiper catalog__slider">
+            <div class="swiper-wrapper catalog__wrapper">
+
+                <div class="swiper-slide catalog__slide">
+                    <div class="catalog__card card">
+                        <h3 class="card__title-main card__title-main--color1">ПОДГОТОВКА К ШКОЛЕ</h3>
+                        <div class="card__content">
+                            <p class="card__price">30 000 тг</p>
+                            <p class="card__age card__dscr">4-6 лет</p>
+                            <p class="card__exercise card__dscr">3 занятия в неделю по 3 ч.</p>
+                            <ul class="card__list">
+                                <li class="card__item">Обучение чтению</li>
+                                <li class="card__item">Письмо</li>
+                                <li class="card__item">Математика</li>
+                                <li class="card__item">Английский язык</li>
+                                <li class="card__item">Развитие речи</li>
+                                <li class="card__item">Концентрация внимания</li>
+                                <li class="card__item">Усвоение изучаемого материала</li>
+                                <li class="card__item">Различные техники запоминания</li>
+                                <li class="card__item">Развитие логико-математического мышления</li>
+                            </ul>
+                            <button class="card__showmore">Подробнее...</button>
+                            <button class="card__btn card__btn--color1">Выбрать</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide catalog__slide">
+                    <div class="catalog__card card">
+                        <h3 class="card__title-main card__title-main--color2">СКОРОЧТЕНИЕ</h3>
+                        <div class="card__content">
+                            <p class="card__price">27 000 тг</p>
+                            <p class="card__age card__dscr">6-15 лет</p>
+                            <p class="card__exercise card__dscr">3 занятия в неделю по 1 ч.</p>
+                            <ul class="card__list">
+                                <li class="card__item">Увеличение скорости чтения</li>
+                                <li class="card__item">Артикуляция</li>
+                                <li class="card__item">Развитие речи</li>
+                                <li class="card__item">Развитие внимания</li>
+                                <li class="card__item">Увеличение поля зрения</li>
+                                <li class="card__item">Увеличение словарного запаса</li>
+                                <li class="card__item">Понимание прочитанного</li>
+                                <li class="card__item">Пересказ</li>
+                                <li class="card__item">Различные техники понимания</li>
+                                <li class="card__item">Пробный урок и диагностика БЕСПЛАТНО</li>
+                            </ul>
+                            <button class="card__showmore">Подробнее...</button>
+                            <button class="card__btn card__btn--color2">Выбрать</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide catalog__slide">
+                    <div class="catalog__card card">
+                        <h3 class="card__title-main card__title-main--color3">МЕНТАЛЬНАЯ АРИФМЕТИКА</h3>
+                        <div class="card__content">
+                            <p class="card__price">20 000 тг</p>
+                            <p class="card__exercise card__dscr card__exercise--margin">2 занятия в неделю по 1 ч.</p>
+                            <ul class="card__list">
+                                <li class="card__item">Быстрый счет</li>
+                                <li class="card__item">Развитие высокой концентрации</li>
+                                <li class="card__item">Увеличесние поля зрения</li>
+                                <li class="card__item">Фотографическая память</li>
+                                <li class="card__item">Пробный урок БЕСПЛАТНО</li>
+                                <li class="card__item">Обучающая платформа в ПОДАРОК</li>
+                            </ul>
+                            <button class="card__showmore">Подробнее...</button>
+                            <button class="card__btn card__btn--color3">Выбрать</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide catalog__slide">
+                    <div class="catalog__card card">
+                        <h3 class="card__title-main card__title-main--color4">КАЛЛИГРАФИЯ</h3>
+                        <div class="card__content">
+                            <p class="card__price">24 000 тг</p>
+                            <p class="card__exercise card__dscr card__exercise--margin">3 занятия в неделю по 1 ч.</p>
+                            <ul class="card__list">
+                                <li class="card__item">Развитие памяти</li>
+                                <li class="card__item">Восприятие пространства</li>
+                                <li class="card__item">Прокачивание мелкой моторики</li>
+                                <li class="card__item">Основы грамотного письма</li>
+                                <li class="card__item">Развитие физической выносливости и усидчивости</li>
+                                <li class="card__item">Умение писать диктанты без графических и орфографических ошибок
+                                </li>
+                            </ul>
+                            <button class="card__showmore">Подробнее...</button>
+                            <button class="card__btn card__btn--color4">Выбрать</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide catalog__slide">
+                    <div class="catalog__card card">
+                        <h3 class="card__title-main card__title-main--color5">АНГЛИЙСКИЙ ЯЗЫК</h3>
+                        <div class="card__content">
+                            <p class="card__price">18 000 тг</p>
+                            <p class="card__exercise card__dscr card__exercise--margin">2 занятия в неделю по 1,5 ч.</p>
+                            <ul class="card__list">
+                                <li class="card__item">Чтение по правилам</li>
+                                <li class="card__item">Знание 500 новых слов</li>
+                                <li class="card__item">Самостоятельное выполнение домашнего задания</li>
+                            </ul>
+                            <button class="card__showmore card__showmore--display">Подробнее...</button>
+                            <button class="card__btn card__btn--color5">Выбрать</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide catalog__slide">
+                    <div class="catalog__card card">
+                        <h3 class="card__title-main card__title-main--color6">ГРУППА ПРОДЛЕННОГО ДНЯ</h3>
+                        <div class="card__content">
+                            <p class="card__price">35 000 тг</p>
+                            <p class="card__exercise card__dscr card__exercise--margin-last"><span>5 раз в
+                                    неделю</span><span>1 смена с 9:00 по 12:00</span>2 смена с 14:00 по 17:00</p>
+                            <ul class="card__list">
+                                <li class="card__item">Подготовка к СОР и СОЧ</li>
+                                <li class="card__item">Проработка пробелов в знаниях</li>
+                                <li class="card__item">Индивидуальный подход</li>
+                                <li class="card__item">Выявление сильных сторон ребенка</li>
+                                <li class="card__item">Профессиональная помощь в подготовке домашних заданий</li>
+                                <li class="card__item">Дополнительные образовательные дисциплины</li>
+                            </ul>
+                            <button class="card__showmore">Подробнее...</button>
+                            <button class="card__btn card__btn--color6">Выбрать</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="swiper-button-prev catalog__prev"></div>
+        <div class="swiper-button-next catalog__next"></div>
+    </div>
+</section>
+        <section class="certificates" id="certificates">
+    <div class="container certificates__container">
+        <h2 class="certificates__title">Наши сертификаты</h2>
+        <div class="certificates__images">
+            <img src="./img/certificates-img1.png" alt="Сертификат" class="certificates__img">
+            <img src="./img/certificates-img2.png" alt="Сертификат" class="certificates__img">
+            <img src="./img/certificates-img3.png" alt="Сертификат" class="certificates__img">
+            <img src="./img/certificates-img4.png" alt="Сертификат" class="certificates__img">
+        </div>
+    </div>
+</section>
+        <section class="reviews" id="reviews">
+    <div class="container reviews__container">
+        <h2 class="reviews__title">Отзывы</h2>
+
+        <div class="swiper reviews__slider">
+            <div class="swiper-wrapper reviews__wrapper">
+
+                <div class="swiper-slide reviews__slide">
+                    <div class="reviews__top">
+                        <img src="./img/reviews-img1.jpg" alt="Автор отзыва" class="reviews__img">
+                        <h3 class="reviews__name">Malika Fazlieva</h3>
+                    </div>
+                    <p class="reviews__dscr">Маған ұнаған жері білімді жақсы береді. Ұлымның қатынап жүргеніне 1 ай болмады бірақ нәтиже бар. Мұғалімдеріде өте сыпайы әрі білімді.</p>
+                </div>
+
+                <div class="swiper-slide reviews__slide">
+                    <div class="reviews__top">
+                        <img src="./img/reviews-img2.jpg" alt="Автор отзыва" class="reviews__img">
+                        <h3 class="reviews__name">Aigul Lepessova</h3>
+                    </div>
+                    <p class="reviews__dscr">Отлично все нравится! Внучка уже 6 месяц занимается, довольны.</p>
+                </div>
+
+                <div class="swiper-slide reviews__slide">
+                    <div class="reviews__top">
+                        <img src="./img/reviews-img3.jpg" alt="Автор отзыва" class="reviews__img">
+                        <h3 class="reviews__name">Malika Fazlieva</h3>
+                    </div>
+                    <p class="reviews__dscr">Маған ұнаған жері білімді жақсы береді. Ұлымның қатынап жүргеніне 1 ай болмады бірақ нәтиже бар. Мұғалімдеріде өте сыпайы әрі білімді.</p>
+                </div>
+
+                <div class="swiper-slide reviews__slide">
+                    <div class="reviews__top">
+                        <img src="./img/reviews-img4.jpg" alt="Автор отзыва" class="reviews__img">
+                        <h3 class="reviews__name">Анара Баймаганбетова</h3>
+                    </div>
+                    <p class="reviews__dscr">Искренне рекомендую, детям дают отличные знания и безопасность. Профессионалы своего дела. Удачи вам и успехов желаю.</p>
+                </div>
+
+                <div class="swiper-slide reviews__slide">
+                    <div class="reviews__top">
+                        <img src="./img/reviews-img5.jpg" alt="Автор отзыва" class="reviews__img">
+                        <h3 class="reviews__name">Gulzhan Kossantayeva</h3>
+                    </div>
+                    <p class="reviews__dscr">Комфорная обстановака, распологает к учебе, учителя доброжелательные,но требовательные! То, что надо! Советую 100%.</p>
+                </div>
+
+                <div class="swiper-slide reviews__slide">
+                    <div class="reviews__top">
+                        <img src="./img/reviews-img6.jpg" alt="Автор отзыва" class="reviews__img">
+                        <h3 class="reviews__name">Енлик Серик</h3>
+                    </div>
+                    <p class="reviews__dscr">Айжан Талгатовна өз ісінің маманы. Менің қызымның оқу үлгеріміне көп ықпал тигіздіңіз. Кемеңгер мектебі нағыз кеменгер бала тәлімін береді!</p>
+                </div>
+
+            </div>
+        </div>
+        <div class="swiper-button-prev reviews__prev"></div>
+        <div class="swiper-button-next reviews__next"></div>
+    </div>
+</section>
+        <section class="contact" id="contact">
+    <div class="container contact__container">
+        <img src="./img/contact-img1.svg" alt="Фон" class="contact__img1">
+        <img src="./img/contact-img2.svg" alt="Фон" class="contact__img2">
+        <img src="./img/contact-img3.svg" alt="Фон" class="contact__img3">
+        <div class="center">
+        <div class="contact__information">
+            <h2 class="contact__title-main">Наши контакты</h2>
+            <p class="contact__dscr">Запишитесь на бесплатный пробный урок по номеру:</p>
+            <a href="tel:87711459826" class="contact__info contact__hover">8 (771) 145-98-26</a>
+            <p class="contact__dscr contact__dscr--padding">Адрес:</p>
+            <p class="contact__info">г. Нур-Султан, ул. К. Аманжолова, 28, офис 14 Вс - выходной</p>
+            <p class="contact__dscr">График работы:</p>
+            <p class="contact__info">Пн-Пт - 9:00-19:00; Сб - 9:00-17:00;</p>
+            <p class="contact__dscr">E-mail:</p>
+            <a href="mailto:@kemenger.mektebi" class="contact__info contact__hover">@kemenger.mektebi</a>
+        </div>
+    </div>
+        <div class="map">
+            <div id="map" class="map__container"></div>
+        </div>
+    </div>
+</section>
+    </main>
+
+    <footer class="footer">
+    <div class="container footer__container">
+        <img src="./img/logo.png" alt="Логотив" class="footer__logo-main">
+        <ul class="footer__list">
+            <li class="footer__item"><a href="#about" class="footer__link" data-scroll>О нас</a></li>
+            <li class="footer__item"><a href="#catalog" class="footer__link" data-scroll>Каталог</a></li>
+            <li class="footer__item"><a href="#certificates" class="footer__link" data-scroll>Сертификаты</a></li>
+            <li class="footer__item"><a href="#reviews" class="footer__link" data-scroll>Отзывы</a></li>
+            <li class="footer__item"><a href="#contact" class="footer__link" data-scroll>Контакты</a></li>
+        </ul>
+        <img src="./img/footer-logo.png" alt="Логотип" class="footer__logo">
+    </div>
+</footer>
+
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript"></script>
+</body>
+
+
+</html>
