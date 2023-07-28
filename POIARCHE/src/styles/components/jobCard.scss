@@ -1,0 +1,22 @@
+.job-card {
+    &__img {
+        margin-bottom: rem(20);
+    }
+
+    &__body {
+        padding: 0 rem(16) rem(20) rem(16);
+    }
+
+    &__title {
+        @include card-title;
+        margin-bottom: rem(20);
+    }
+
+    &__list {
+        @include list;
+    }
+
+    &__item {
+        @include item;
+    }
+}

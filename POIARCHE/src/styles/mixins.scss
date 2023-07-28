@@ -1,0 +1,33 @@
+@mixin flex-row {
+    display: flex;
+    align-items: center;
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin card-title {
+    font-family: Pixeloid-Sans;
+    font-size: rem(30);
+    line-height: 135%;
+}
+
+@mixin dscr {
+    font-family: Pixeloid-Sans;
+    font-size: rem(18);
+    line-height: 135%;
+}
+
+@mixin list {
+    padding: 0;
+    margin: 0;
+    list-style-type: square;
+    padding-left: rem(20);
+}
+
+@mixin item {
+    @include dscr;
+    color: var(--grey);
+}

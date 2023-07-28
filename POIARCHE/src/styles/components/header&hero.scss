@@ -1,0 +1,69 @@
+.header-hero {
+    background: url('../images/header&hero-bg.jpg') center center/ cover no-repeat;
+}
+
+.header {
+    &__container {
+        @include flex-row;
+        padding-top: rem(60);
+        padding-bottom: rem(25);
+    }
+
+    &__logo {
+        max-height: rem(23);
+    }
+
+    &__nav {
+        @include flex-row;
+        margin-left: auto;
+        padding-bottom: rem(6);
+    }
+
+    &__link {
+        font-family: Pixeloid-Sans;
+        font-size: rem(18);
+        line-height: 135%;
+        color: var(--black);
+        transition: color .2s ease-in-out;
+
+        &:not(:last-child) {
+            margin-right: rem(50);
+        }
+
+        &:hover {
+            color: var(--main);
+        }
+
+        &:focus {
+            outline: none;
+            color: var(--main);
+        }
+
+        &:active {
+            color: var(--main--active);
+        }
+    }
+}
+
+.hero {
+    padding-bottom: rem(60);
+    padding-top: rem(74);
+    
+    &__container {
+        @include flex-column;
+        align-items: center;
+    }
+
+    &__dscr {
+        @include dscr;
+        max-width: rem(320);
+        margin-bottom: rem(166);
+        text-align: center;
+        color: var(--black);
+    }
+
+    &__btn {
+        align-self: stretch;
+        text-align: left;
+    }
+}

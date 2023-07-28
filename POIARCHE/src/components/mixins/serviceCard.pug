@@ -1,0 +1,16 @@
+include ./btn 
+
+mixin serviceCard(svg, title, listItems)
+    .service-card
+        .service-card__header
+            svg.service-card__svg(width="30" height="31" viewBox="0 0 30 31")
+                use(xlink:href=`#service${svg}`)
+            h3.service-card__title=title
+        .service-card__body 
+            ul.service-card__list
+                each list in listItems
+                    li.service-card__item=list
+        .service-card__bottom
+            +btn('service-card__btn') Оставить заявку
+              svg.service-card__arrow.blue-arrow(width="21" height="23" viewBox="0 0 21 23")
+                use(xlink:href=`#blueArrow`)

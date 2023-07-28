@@ -1,0 +1,35 @@
+.service-card {
+    border: rem(2) solid var(--main);
+
+    &__header {
+        @include flex-row;
+        padding: rem(16);
+        background-color: var(--main);
+    }
+
+    &__svg {
+        margin-right: rem(20);
+    }
+
+    &__title {
+        @include card-title;
+        color: var(--white);
+    }
+
+    &__body {
+        padding: rem(20) rem(7) rem(45) rem(7);
+    }
+
+    &__list {
+        @include list;
+    }
+
+    &__item {
+        @include item;
+    }
+
+    &__btn {
+        border: none;
+        border-top: rem(2) solid var(--main);
+    }
+}

@@ -1,0 +1,24 @@
+@import "functions";
+@import "media-queries";
+
+:root {
+  //margins
+  --x-offset-main: #{rem(20)};
+  --section-margin: #{rem(150)};
+}
+
+
+@include e-lg {
+}
+
+@include lg {
+}
+
+@include e-md {
+}
+
+@include md {
+}
+
+@include xs {
+}

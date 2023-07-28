@@ -1,0 +1,77 @@
+.btn {
+    position: relative;
+    width: 100%;
+    padding: rem(24) rem(16);
+    border: rem(2) solid var(--main);
+    background-color: transparent;
+    font-family: Pixeloid-Mono;
+    font-size: rem(18);
+    line-height: 135%;
+    color: var(--main);
+    text-align: left;
+    transition: color .2s ease-in-out, background-color .2s ease-in-out;
+
+    &:hover {
+        background-color: var(--main);
+        color: var(--white);
+    }
+
+    &:focus {
+        outline: none;
+        background-color: var(--main);
+        color: var(--white);
+    }
+
+    &:active {
+        background-color: transparent;
+        color: var(--main--active);
+    }
+
+    &:hover .blue-arrow {
+        fill: var(--white);
+    }
+
+    &:focus .blue-arrow {
+        fill: var(--white);
+    }
+
+    &:active .blue-arrow {
+        fill: var(--main--active);
+    }
+
+    &--big {
+        padding: rem(20) rem(30);
+        font-size: rem(30);
+        color: var(--white);
+        border: none;
+        background-color: var(--main);
+
+        &:hover {
+            background-color: var(--white);
+            outline: rem(3) solid var(--main);
+            color: var(--main);
+        }
+
+        &:focus {
+            outline: rem(3) solid var(--main);
+            background-color: var(--white);
+            color: var(--main);
+        }
+
+        &:active {
+            color: var(--main--active);
+        }
+
+        &:hover .white-arrow {
+            fill: var(--main);
+        }
+
+        &:focus .white-arrow {
+            fill: var(--main);
+        }
+
+        &:active .white-arrow {
+            fill: var(--main--active);
+        }
+    }
+}

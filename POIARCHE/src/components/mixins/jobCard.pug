@@ -1,0 +1,14 @@
+include ./btn 
+
+mixin jobCard(img, title, listItems)
+    .job-card
+        img.job-card__img(src=`./assets/images/job-img${img}.jpg` alt='Работник')
+        .job-card__body
+            h3.job-card__title=title
+            ul.job-card__list
+                each item in listItems 
+                    li.job-card__item=item 
+        .job-card__bottom
+            +btn('job-card__btn') Оставить заявку
+                svg.service-card__arrow.blue-arrow(width="21" height="23" viewBox="0 0 21 23")
+                    use(xlink:href='#blueArrow')

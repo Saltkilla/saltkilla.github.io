@@ -1,0 +1,32 @@
+.footer {
+    background-color: var(--bg);
+
+    &__up {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: rem(30);
+        border-bottom: rem(1) solid var(--grey);
+    }
+
+    &__link {
+        @include dscr;
+        color: var(--black);
+    }
+
+    &__down{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: rem(23);
+    }
+
+    &__dscr {
+        @include dscr;
+        color: var(--grey);
+    }
+
+    &__social-link:first-child {
+        margin-right: rem(20);
+    }
+}
