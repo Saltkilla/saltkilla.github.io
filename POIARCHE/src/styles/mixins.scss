@@ -8,10 +8,20 @@
     flex-direction: column;
 }
 
+@mixin grid3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: rem(25);
+}
+
 @mixin card-title {
     font-family: Pixeloid-Sans;
     font-size: rem(30);
     line-height: 135%;
+
+    @include xs {
+        font-size: rem(22);
+    }
 }
 
 @mixin dscr {
@@ -30,4 +40,23 @@
 @mixin item {
     @include dscr;
     color: var(--grey);
+}
+
+@mixin link {
+    @include dscr;
+    color: var(--black);
+    transition: color .2s ease-in-out;
+
+    &:hover {
+        color: var(--main);
+    }
+
+    &:focus {
+        outline: none;
+        color: var(--main);
+    }
+
+    &:active {
+        color: var(--main--active);
+    }
 }

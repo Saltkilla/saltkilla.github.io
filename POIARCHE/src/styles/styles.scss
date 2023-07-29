@@ -48,8 +48,11 @@ a {
   cursor: pointer;
 }
 
+img {
+  width: 100%;
+}
+
 .main {
-  flex: 1 0 auto;
   overflow-x: hidden;
   background-color: var(--bg);
 }
@@ -72,6 +75,18 @@ a {
     line-height: 135%;
     color: var(--black);
   }
+
+  @include e-md {
+    &__title {
+      font-size: rem(40);
+    }
+  }
+
+  @include xs {
+    &__title {
+      font-size: rem(30);
+    }
+  }
 }
 
 .main-title {
@@ -81,6 +96,15 @@ a {
   font-family: Pixeloid-Sans;
   font-size: rem(110);
   line-height: 110%;
+
+  @include e-md {
+    max-width: rem(559);
+    font-size: rem(70);
+  }
+
+  @include xs {
+    font-size: rem(50);
+  }
 }
 
 .none {
@@ -110,3 +134,4 @@ a {
 @import './components/header&hero';
 @import './pages/index';
 @import './components/footer';
+@import './components/modalForOrder';

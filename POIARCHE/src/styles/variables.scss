@@ -7,18 +7,32 @@
   --section-margin: #{rem(150)};
 }
 
-
-@include e-lg {
-}
-
-@include lg {
-}
-
 @include e-md {
+  :root {
+    //margins
+    --x-offset-main: #{rem(70)};
+    --section-margin: #{rem(80)};
+  }
 }
 
 @include md {
+  :root {
+    //margins
+    --x-offset-main: #{rem(50)};
+  }
+}
+
+@include s {
+  :root {
+    //margins
+    --x-offset-main: #{rem(35)};
+  }
 }
 
 @include xs {
+  :root {
+    //margins
+    --x-offset-main: #{rem(25)};
+    --section-margin: #{rem(70)};
+  }
 }

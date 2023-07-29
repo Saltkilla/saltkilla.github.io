@@ -3,6 +3,7 @@ include ../components/mixins/btn
 include ../components/mixins/portfolioCard
 include ../components/mixins/serviceCard
 include ../components/mixins/jobCard
+include ../components/mixins/modalForOrder
 
 +page('Главная', 'index-page')
 
@@ -47,7 +48,7 @@ include ../components/mixins/jobCard
                     img.about__img-middle(src="./assets/images/about-img2.jpg", alt="Картинка")
                 img.about__img-bottom(src="./assets/images/about-img3.jpg", alt="Картинка")
                 .about__bottom
-                    h3.about__title Описание
+                    h3.about__title.about__title--mb Описание
                     .about__bottom-text
                         p.about__dscr.about__dscr--mr Составление детального плана и структуры сайта, учитывающего потребности и желания арендаторов и посетителей бизнес-центра.
                         p.about__dscr.about__dscr--mr Составление детального плана и структуры сайта, учитывающего потребности и желания арендаторов и посетителей бизнес-центра.
@@ -69,5 +70,6 @@ include ../components/mixins/jobCard
                         svg.service-card__arrow.blue-arrow(width="21" height="23" viewBox="0 0 21 23")
                             use(xlink:href='#blueArrow')
 
+        +modalForOrder(true, 'modal-order')
 
 

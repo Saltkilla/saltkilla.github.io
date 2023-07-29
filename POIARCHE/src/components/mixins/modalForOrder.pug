@@ -1,0 +1,25 @@
+include ./btn 
+
+mixin modalForOrder(order=true, id)
+    .modal-order
+        .modal-order__wrraper
+            .modal-order__card(id=id)
+                svg(class="modal-order__close" width="20" height="20" viewBox="0 0 20 20")
+                    use(xlink:href="#close")
+                form.modal-order__form(action="/")
+                    label.modal-order__label
+                        input.modal-order__input(placeholder='Имя' type='text')
+                    label.modal-order__label
+                        input.modal-order__input(placeholder='Почта' type='mail')
+                    label.modal-order__label
+                        input.modal-order__input(placeholder='Телеграмм' type='text')
+                    if order == true
+                        label.modal-order__label
+                            textarea.modal-order__textarea(placeholder='Ваши пожелания')
+                        label.modal-order__label.modal-order__label--position
+                            button.modal-order__download-btn Приложить ТЗ
+                            input.modal-order__download(type='file')
+                    +btn('modal-order__btn btn--big') Оставить заявку
+                        svg.modal-order__arrow.white-arrow(width="21" height="23" viewBox="0 0 21 23")
+                            use(xlink:href=`#whiteArrow`)
+                    

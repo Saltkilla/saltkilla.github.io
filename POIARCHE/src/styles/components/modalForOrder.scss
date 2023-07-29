@@ -1,0 +1,109 @@
+.modal-order {
+    display: block;
+
+    &--active {
+        display: block;
+    }
+
+    &__wrraper {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 100;
+    }
+
+    &__card {
+        position: relative;
+        max-width: rem(500);
+        max-height: 95vh;
+        padding: rem(20);
+        padding-top: rem(60);
+        background-color: var(--bg);
+        overflow-y: auto;
+    }
+
+    &__close {
+        position: absolute;
+        top: rem(20);
+        right: rem(20);
+    }
+
+    &__label--position {
+        position: relative;
+    }
+
+    &__input,
+    &__textarea,
+    &__download-btn {
+        width: 100%;
+        margin-bottom: rem(16);
+        padding: rem(16) rem(30);
+        font-family: Pixeloid-Mono;
+        font-size: rem(30);
+        line-height: 135%;
+        color: var(--grey);
+        border: rem(4) solid var(--grey);
+        background-color: transparent;
+
+        &:hover {
+            border-color: var(--main);
+            color: var(--main);
+        }
+
+        &:focus {
+            border-color: var(--black);
+            outline: none;
+        }
+
+        &:active {
+            border-color: var(--main--active);
+            color: var(--main--active);
+        }
+    }
+
+    &__textarea {
+        min-height: rem(300);
+    }
+
+    &__download-btn {
+        position: relative;
+        margin-bottom: rem(30);
+        padding-top: rem(25);
+        padding-bottom: rem(25);
+        padding-left: rem(74);
+        font-size: rem(18);
+        text-align: left;
+
+        &::before {
+            content: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M23.5 11.9988V9.3759H21.0553V11.9988H18.6106V14.6241H16.1659V17.2494L13.7212 17.2494L13.7212 1.5H11.2788L11.2788 17.2494H8.83408L8.83408 14.6241H6.38939V11.9988H3.94469V9.3759L1.5 9.3759V11.9988H3.94469V14.6241H6.38939V17.2494L8.83408 17.2494V19.8747H11.2788V22.5H13.7212V19.8747H16.1659V17.2494H18.6106V14.6241H21.0553V11.9988H23.5Z' fill='%23A0A0A0'/%3E%3C/svg%3E%0A");
+            position: absolute;
+            top: rem(25);
+            left: rem(30);
+        }
+
+        &::after {
+            content: '(до 70 мб)';
+            position: absolute;
+            top: rem(25);
+            right: rem(30);
+            font-size: rem(10);
+            font-family: Pixeloid-Mono;
+        }
+    }
+
+    &__download {
+        position: absolute;
+        width: rem(500);
+        top: 0;
+        right: 0;
+        bottom: 0;
+        cursor: pointer;
+        opacity: 0;
+    }
+}

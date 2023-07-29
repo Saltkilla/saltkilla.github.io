@@ -74,4 +74,12 @@
             fill: var(--main--active);
         }
     }
+
+    @include xs {
+        font-size: rem(22);
+    }
+
+    @include xxs {
+        padding: rem(10) rem(20);
+    }
 }

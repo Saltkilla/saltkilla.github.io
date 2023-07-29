@@ -10,8 +10,7 @@
     }
 
     &__link {
-        @include dscr;
-        color: var(--black);
+        @include link;
     }
 
     &__down{
@@ -21,12 +20,49 @@
         padding-top: rem(23);
     }
 
-    &__dscr {
+    &__dscr,
+    &__social-link {
         @include dscr;
         color: var(--grey);
     }
 
     &__social-link:first-child {
         margin-right: rem(20);
+    }
+
+    @include md {
+        &__down {
+            flex-direction: column;
+        }
+        &__social {
+            margin-bottom: rem(15);
+            margin-top: rem(15);
+        }
+    }
+
+    @include xs {
+        &__up {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        &__link:not(:last-child) {
+            margin-bottom: rem(25);
+        }
+
+        &__down {
+            align-items: flex-start;
+        }
+
+        &__social {
+            @include flex-column;
+            margin-bottom: rem(25);
+            margin-top: rem(25);
+        }
+
+        &__social-link:first-child {
+            margin-bottom: rem(25);
+            margin-right: 0;
+        }
     }
 }
