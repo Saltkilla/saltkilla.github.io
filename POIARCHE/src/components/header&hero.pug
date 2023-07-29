@@ -7,31 +7,32 @@
             use(xlink:href="#logo")
 
         nav.header__nav
-          a.header__link(href="/") кейсы
-          a.header__link(href="/") услуги
-          a.header__link(href="/") вакансии
-          a.header__link(href="/") о нас
-          a.header__link(href="/") контакты
+          a.header__link(href="#portfolio") кейсы
+          a.header__link(href="#service") услуги
+          a.header__link(href="#job") вакансии
+          a.header__link(href="#about") о нас
+          a.header__link(href="#contact") контакты
 
-        button.header__burger.none(id="burger-btn")
+        button.header__burger(id="burger-btn")
           svg.header__burger-icon.burger-icon(width="30" height="9" viewBox="0 0 30 9")
             use(xlink:href="#burger")
           svg.header__burger-icon.close-icon(viewBox="0 0 24 24" width="24" height="24")
             use(xlink:href="#close")
 
-        .burger-menu.none
-          nav.burger-menu__links
-            a.header__link(href="./publish.html") кейсы
-            a.header__link(href="./journal.html") услуги
-            a.header__link(href="./edition.html") вакансии
-            a.header__link(href="./contacts.html") о нас
-            a.header__link(href="./requirements.html") контакты
+        .burger-wrraper
+          .burger-menu
+            nav.burger-menu__links
+              a.burger-menu__link(href="#portfolio") кейсы
+              a.burger-menu__link(href="#service") услуги
+              a.burger-menu__link(href="#job") вакансии
+              a.burger-menu__link(href="#about") о нас
+              a.burger-menu__link(href="#contact") контакты
 
     section.hero
       .hero__container
         h1.main-title Дизайн студия для бизнеса
         p.hero__dscr Делаем дизайн, который приносит прибль
-        +btn('btn--big hero__btn') Оставить заявку
+        +btn('btn--big hero__btn order-btn') Оставить заявку
             svg.white-arrow.hero__icon(width="24" height="24" viewBox="0 0 24 24")
                 use(xlink:href="#whiteArrow")
 

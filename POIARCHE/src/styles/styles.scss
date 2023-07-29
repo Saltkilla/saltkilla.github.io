@@ -6,6 +6,15 @@
 @import "media-queries";
 @import "mixins";
 
+@import './components/btn';
+@import './components/portfolioCard';
+@import './components/serviceCard';
+@import './components/jobCard';
+@import './components/header&hero';
+@import './pages/index';
+@import './components/footer';
+@import './components/modalForOrder';
+
 *,
 :after,
 :before {
@@ -111,6 +120,14 @@ img {
   display: none;
 }
 
+.flex {
+  display: flex;
+}
+
+.block {
+  display: block;
+}
+
 .white-arrow {
   position: absolute;
   fill: var(--white);
@@ -126,12 +143,3 @@ img {
   right: rem(30);
   transition: fill .2s ease-in-out;
 }
-
-@import './components/btn';
-@import './components/portfolioCard';
-@import './components/serviceCard';
-@import './components/jobCard';
-@import './components/header&hero';
-@import './pages/index';
-@import './components/footer';
-@import './components/modalForOrder';

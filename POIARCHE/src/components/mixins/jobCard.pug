@@ -9,6 +9,6 @@ mixin jobCard(img, title, listItems)
                 each item in listItems 
                     li.job-card__item=item 
         .job-card__bottom
-            +btn('job-card__btn') Оставить заявку
+            +btn('job-card__btn job-btn') Оставить заявку
                 svg.service-card__arrow.blue-arrow(width="21" height="23" viewBox="0 0 21 23")
                     use(xlink:href='#blueArrow')

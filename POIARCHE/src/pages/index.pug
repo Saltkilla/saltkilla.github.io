@@ -8,7 +8,7 @@ include ../components/mixins/modalForOrder
 +page('Главная', 'index-page')
 
     .container                
-        section.section
+        section.section(id='portfolio')
             h2.section__title Кейсы
             .portfolio
                 +portfolioCard('1', 'БЦ Миллениум')
@@ -18,7 +18,7 @@ include ../components/mixins/modalForOrder
                 +portfolioCard('1', 'БЦ Миллениум')
                 +portfolioCard('1', 'БЦ Миллениум')
 
-        section.section
+        section.section(id='service')
             h2.section__title Услуги
             .service
                 +serviceCard('Site', 'Сайты', ['от 80.000₽', '7 дней на разработку', 'что-то еще', 'и еще что-то'])
@@ -27,14 +27,14 @@ include ../components/mixins/modalForOrder
                 +serviceCard('Identity', 'Айдентика', ['от 80.000₽', '7 дней на разработку', 'что-то еще', 'и еще что-то'])
                 +serviceCard('Mascot', 'Маскоты', ['от 80.000₽', '7 дней на разработку', 'что-то еще', 'и еще что-то'])
         
-        section.section
+        section.section(id='job')
             h2.section__title Вакансии
             .jobs
                 +jobCard('1', 'Дизайнер', ['от 80.000₽', '7 дней на разработку', 'что-то еще', 'и еще что-то'])
                 +jobCard('2', 'Менеджер', ['от 80.000₽', '7 дней на разработку', 'что-то еще', 'и еще что-то'])
                 +jobCard('3', 'Иллюстратор', ['от 80.000₽', '7 дней на разработку', 'что-то еще', 'и еще что-то'])
 
-        section.section
+        section.section(id='about')
             h2.section__title О нас
             .about 
                 img.about__img-top(src="./assets/images/about-img1.jpg", alt="Картинка")
@@ -54,7 +54,7 @@ include ../components/mixins/modalForOrder
                         p.about__dscr.about__dscr--mr Составление детального плана и структуры сайта, учитывающего потребности и желания арендаторов и посетителей бизнес-центра.
                         p.about__dscr Разработка интерактивной карты бизнес-центра, позволяющей пользователям легко найти нужный офис или помещение.
 
-        section.section
+        section.section(id='contact')
             h2.section__title Контакты
             .contact
                 .contact__card
@@ -71,5 +71,6 @@ include ../components/mixins/modalForOrder
                             use(xlink:href='#blueArrow')
 
         +modalForOrder(true, 'modal-order')
+        +modalForOrder(false, 'modal-job')
 
 

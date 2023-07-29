@@ -1,9 +1,9 @@
 include ./btn 
 
 mixin modalForOrder(order=true, id)
-    .modal-order
+    .modal-order(id=id)
         .modal-order__wrraper
-            .modal-order__card(id=id)
+            .modal-order__card
                 svg(class="modal-order__close" width="20" height="20" viewBox="0 0 20 20")
                     use(xlink:href="#close")
                 form.modal-order__form(action="/")
