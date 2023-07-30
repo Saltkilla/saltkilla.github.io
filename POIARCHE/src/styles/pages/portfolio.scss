@@ -1,0 +1,76 @@
+.portfolio-page {
+    padding-top: rem(60);
+
+    @include e-md {
+        padding-top: rem(70);
+    }
+
+    @include xs {
+        padding-top: rem(25);
+    }
+}
+
+.case {
+    &__section {
+        margin-bottom: rem(60);
+    }
+
+    &__top {
+        display: flex;
+        flex-wrap: wrap;
+        gap: rem(25);
+        margin-bottom: rem(30);
+    }
+
+    &__img-middle {
+        max-width: 48.9%;  
+    }
+
+    @include lg {
+        &__img-middle {
+            max-width: 48.7%;  
+        }
+    }
+
+    @include e-md {
+        &__img-middle {
+            max-width: 48.3%;  
+        }
+    }
+
+    @include md {
+        &__img-middle {
+            max-width: 47.7%;  
+        }
+    }
+
+    @include s {
+        &__img-middle {
+            max-width: 47.3%;  
+        }
+    }
+
+    @include xs {
+        &__img-middle {
+            max-width: 46%;  
+        }
+    }
+
+    @include xxs {
+        &__img-middle {
+            max-width: 45%;  
+        }
+    }
+}
+
+.more {
+    @include grid3;
+
+    @include e-md {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include s {
+        @include flex-column;
+    }
+}

@@ -1,0 +1,7 @@
+mixin caseTextPart(title, allDscr)
+    .case-text
+        if title
+            h3.case-title=title
+        .case-text__text
+            each dscr in allDscr
+                p.case-dscr.case-dscr--mr=dscr

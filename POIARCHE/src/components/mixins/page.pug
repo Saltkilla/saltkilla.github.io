@@ -1,4 +1,4 @@
-mixin page(title, wrpClass)
+mixin page(title, wrpClass, header=true)
   - var viewTitle = title ? `Поярче - ${title}` : "Поярче"
   doctype html
   html(lang='ru')
@@ -13,7 +13,8 @@ mixin page(title, wrpClass)
 
     body(class='page')
       include ../svgSprites
-      include ../header&hero
+      if header == true
+        include ../header&hero
 
       main(class=`main ${wrpClass}`)
         block

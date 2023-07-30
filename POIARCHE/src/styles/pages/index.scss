@@ -79,123 +79,19 @@
         margin-bottom: rem(60);
     }
 
-    &__middle {
-        display: flex;
-        margin-bottom: rem(60);
-    }
-
-    &__middle-text {
-        margin-right: rem(40);
-    }
-
-    &__title {
-        @include card-title;
-        margin-bottom: rem(100);
-
-        &--mb {
-            margin-bottom: 0;
-        }
-    }
-
-    &__dscr {
-        @include dscr;
-        font-family: Onest;
-        color: var(--grey);
-
-        &--mb {
-            margin-bottom: rem(25);
-        }
-
-        &--mr {
-            margin-right: rem(25);
-        }
-    }
-
-    &__img-middle {
-        max-width: rem(736);
-    }
-
     &__img-bottom {
         margin-bottom: rem(30);
     }
 
-    &__bottom {
-        display: grid;
-        grid-template-columns: 1fr 3fr;
-        padding-bottom: rem(30);
-        border-bottom: rem(1) solid var(--grey);
-    }
-
-    &__bottom-text {
-        display: flex;
-    }
-
     @include e-md {
-        &__middle {
-            display: grid;
-            grid-template-columns: 1.65fr 2fr;
-            column-gap: rem(30);
-        }
-
-        &__img-middle {
-            height: 100%;
-        }
-
-        &__middle-text {
-            margin-right: 0;
-        }
-
         &__img-bottom {
             min-height: rem(490);
-        }
-
-        &__bottom {
-            @include flex-column;
-        }
-
-        &__title--mb {
-            margin-bottom: rem(20);
-        }
-    }
-
-    @include md {
-        &__middle {
-            grid-template-columns: repeat(2, 1fr);
-            column-gap: rem(20);
         }
     }
 
     @include s {
-        &__middle {
-            @include flex-column;
-        }
-
-        &__img-middle {
-            order: -1;
-            margin-bottom: rem(40);
-        }
-
-        &__title {
-            margin-bottom: rem(40);
-        }
-
-        &__bottom-text {
-            flex-direction: column;
-        }
-
-        &__dscr--mr {
-            margin-right: 0;
-            margin-bottom: rem(20);
-        }
-
         &__img-top {
             margin-bottom: rem(40);
-        }
-    }
-
-    @include xs {
-        &__title {
-            margin-bottom: rem(20);
         }
     }
 }

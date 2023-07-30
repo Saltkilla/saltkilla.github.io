@@ -1,0 +1,7 @@
+mixin caseRowPart(img, title, allDscr)
+    .case-row
+        .case-row__text
+            h3.case-title.case-title--mb=title
+            each dscr in allDscr
+                p.case-dscr.case-dscr--mb=dscr
+        img.case-row__img(src=`./assets/images/${img}`, alt="Картинка")

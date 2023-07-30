@@ -10,10 +10,12 @@
 @import './components/portfolioCard';
 @import './components/serviceCard';
 @import './components/jobCard';
+@import './components/case';
 @import './components/header&hero';
 @import './pages/index';
 @import './components/footer';
 @import './components/modalForOrder';
+@import './pages/portfolio';
 
 *,
 :after,
@@ -83,6 +85,19 @@ img {
     font-size: rem(55);
     line-height: 135%;
     color: var(--black);
+
+    &--mb0 {
+      margin-bottom: 0;
+    }
+  }
+
+  &__header {
+    @include flex-row;
+    margin-bottom: rem(40);
+  }
+
+  &__arrow {
+    margin-right: rem(30);
   }
 
   @include e-md {
@@ -131,7 +146,6 @@ img {
 .white-arrow,
 .blue-arrow {
   position: absolute;
-  fill: var(--white);
   top: 37%;
   right: rem(30);
   transition: fill .2s ease-in-out;
@@ -141,4 +155,17 @@ img {
     right: rem(5);
   }
 }
+
+.blue-arrow {
+  fill: var(--main);
+}
+
+.white-arrow {
+  fill: var(--white);
+}
+
+.back-arrow {
+  fill: var(--grey);
+}
+
 

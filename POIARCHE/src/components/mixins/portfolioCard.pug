@@ -1,4 +1,5 @@
-mixin portfolioCard(img, title)
+mixin portfolioCard(img, title, link)
     .portfolio-card
         img.portfolio-card__img(src=`./assets/images/portfolio-img${img}.jpg` alt='Работа из портфолио')
         h3.portfolio-card__title=title
+        a.portfolio-card__link(href=`./${link}`) 

@@ -4,19 +4,21 @@ include ../components/mixins/portfolioCard
 include ../components/mixins/serviceCard
 include ../components/mixins/jobCard
 include ../components/mixins/modalForOrder
+include ../components/mixins/caseRowPart
+include ../components/mixins/caseTextPart
 
-+page('Главная', 'index-page')
++page('Главная', 'index-page', true)
 
     .container                
         section.section(id='portfolio')
             h2.section__title Кейсы
             .portfolio
-                +portfolioCard('1', 'БЦ Миллениум')
-                +portfolioCard('1', 'Марта. Виртуальный учитель')
-                +portfolioCard('1', 'Bright Mind Center')
-                +portfolioCard('1', 'БЦ Миллениум')
-                +portfolioCard('1', 'БЦ Миллениум')
-                +portfolioCard('1', 'БЦ Миллениум')
+                +portfolioCard('1', 'БЦ Миллениум', 'portfolio.html')
+                +portfolioCard('1', 'Марта. Виртуальный учитель', null)
+                +portfolioCard('1', 'Bright Mind Center', null)
+                +portfolioCard('1', 'БЦ Миллениум', null)
+                +portfolioCard('1', 'БЦ Миллениум', null)
+                +portfolioCard('1', 'БЦ Миллениум', null)
 
         section.section(id='service')
             h2.section__title Услуги
@@ -38,21 +40,18 @@ include ../components/mixins/modalForOrder
             h2.section__title О нас
             .about 
                 img.about__img-top(src="./assets/images/about-img1.jpg", alt="Картинка")
-                .about__middle
-                    .about__middle-text
-                        h3.about__title Описание
-                        p.about__dscr.about__dscr--mb Составление детального плана и структуры сайта, учитывающего потребности и желания арендаторов и посетителей бизнес-центра.
-                        p.about__dscr.about__dscr--mb Составление детального плана и структуры сайта, учитывающего потребности и желания арендаторов и посетителей бизнес-центра.
-                        p.about__dscr.about__dscr--mb Создание информационного раздела, содержащего подробную информацию о бизнес-центре, его услугах, возможностях и преимуществах.
-                        p.about__dscr Создание информационного раздела, содержащего подробную информацию о бизнес-центре, его услугах, возможностях и преимуществах.
-                    img.about__img-middle(src="./assets/images/about-img2.jpg", alt="Картинка")
+                +caseRowPart('about-img2.jpg', 'Описание', [
+                    'Составление детального плана и структуры сайта, учитывающего потребности и желания арендаторов и посетителей бизнес-центра.',
+                    'Составление детального плана и структуры сайта, учитывающего потребности и желания арендаторов и посетителей бизнес-центра.',
+                    'Создание информационного раздела, содержащего подробную информацию о бизнес-центре, его услугах, возможностях и преимуществах.',
+                    'Разработка интерактивной карты бизнес-центра, позволяющей пользователям легко найти нужный офис или помещение.',
+                ])
                 img.about__img-bottom(src="./assets/images/about-img3.jpg", alt="Картинка")
-                .about__bottom
-                    h3.about__title.about__title--mb Описание
-                    .about__bottom-text
-                        p.about__dscr.about__dscr--mr Составление детального плана и структуры сайта, учитывающего потребности и желания арендаторов и посетителей бизнес-центра.
-                        p.about__dscr.about__dscr--mr Составление детального плана и структуры сайта, учитывающего потребности и желания арендаторов и посетителей бизнес-центра.
-                        p.about__dscr Разработка интерактивной карты бизнес-центра, позволяющей пользователям легко найти нужный офис или помещение.
+                +caseTextPart('Описание', [
+                    'Составление детального плана и структуры сайта, учитывающего потребности и желания арендаторов и посетителей бизнес-центра.',
+                    'Создание информационного раздела, содержащего подробную информацию о бизнес-центре, его услугах, возможностях и преимуществах.',
+                    'Разработка интерактивной карты бизнес-центра, позволяющей пользователям легко найти нужный офис или помещение.',
+                ])
 
         section.section(id='contact')
             h2.section__title Контакты

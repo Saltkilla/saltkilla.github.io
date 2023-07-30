@@ -1,0 +1,56 @@
+include ../components/mixins/page
+include ../components/mixins/portfolioCard
+include ../components/mixins/caseRowPart
+include ../components/mixins/caseTextPart
+
+
++page('Портфолио', 'portfolio-page', false)
+
+    .container
+        section.section
+            .section__header
+                svg.section__arrow.back-arrow(width="24" height="25" viewBox="0 0 24 25")
+                    use(xlink:href='#backArrow')
+                h1.section__title.section__title--mb0 БЦ Миллениум
+            .case
+                .case__section
+                    .case__top
+                        img.case__img-prev(src="./assets/images/case-prev-img.jpg", alt="Картинка")
+                    +caseTextPart('Задачи', [
+                    'Составление детального плана и структуры сайта, учитывающего потребности и желания арендаторов и посетителей бизнес-центра.',
+                    'Создание информационного раздела, содержащего подробную информацию о бизнес-центре, его услугах, возможностях и преимуществах.',
+                    'Разработка интерактивной карты бизнес-центра, позволяющей пользователям легко найти нужный офис или помещение.',
+                    ])
+                .case__section
+                    .case__top
+                        img.case__img-middle.case__img-middle--mr(src="./assets/images/case-middle-img.jpg", alt="Картинка")
+                        img.case__img-middle(src="./assets/images/case-middle-img.jpg", alt="Картинка")
+                    +caseTextPart('Описание', [
+                    'Составление детального плана и структуры сайта, учитывающего потребности и желания арендаторов и посетителей бизнес-центра.',
+                    'Создание информационного раздела, содержащего подробную информацию о бизнес-центре, его услугах, возможностях и преимуществах.',
+                    'Разработка интерактивной карты бизнес-центра, позволяющей пользователям легко найти нужный офис или помещение.',
+                    ])
+                .case__section
+                    .case__top
+                        img.case__img-big(src="./assets/images/case-big-img.jpg", alt="Картинка")
+                        img.case__img-middle(src="./assets/images/case-middle-img.jpg", alt="Картинка")
+                        img.case__img-middle(src="./assets/images/case-middle-img.jpg", alt="Картинка")
+                        img.case__img-big(src="./assets/images/case-big-img.jpg", alt="Картинка")
+                    +caseTextPart(false, [
+                    'Составление детального плана и структуры сайта, учитывающего потребности и желания арендаторов и посетителей бизнес-центра.',
+                    'Создание информационного раздела, содержащего подробную информацию о бизнес-центре, его услугах, возможностях и преимуществах.',
+                    'Разработка интерактивной карты бизнес-центра, позволяющей пользователям легко найти нужный офис или помещение.',
+                    ])
+                .case__section
+                    +caseRowPart('about-img2.jpg', 'Описание', [
+                    'Составление детального плана и структуры сайта, учитывающего потребности и желания арендаторов и посетителей бизнес-центра.',
+                    'Составление детального плана и структуры сайта, учитывающего потребности и желания арендаторов и посетителей бизнес-центра.',
+                    'Создание информационного раздела, содержащего подробную информацию о бизнес-центре, его услугах, возможностях и преимуществах.',
+                    'Разработка интерактивной карты бизнес-центра, позволяющей пользователям легко найти нужный офис или помещение.',
+                    ])
+        section.section
+            h2.section__title Еще кейсы
+            .more
+                +portfolioCard('1', 'БЦ Миллениум', 'portfolio.html')
+                +portfolioCard('1', 'Марта. Виртуальный учитель', null)
+                +portfolioCard('1', 'Bright Mind Center', null)            
