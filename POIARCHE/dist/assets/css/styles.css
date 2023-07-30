@@ -435,7 +435,7 @@ template {
 }
 @media screen and (max-width: 375px) {
   .btn {
-    padding: 0.625rem 1.25rem;
+    padding: 0.625rem 0.3125rem;
   }
 }
 
@@ -925,6 +925,7 @@ template {
 
 .footer {
   background-color: var(--bg);
+  padding-bottom: 3.75rem;
 }
 .footer__up {
   display: flex;
@@ -1206,18 +1207,18 @@ img {
   display: block;
 }
 
-.white-arrow {
+.white-arrow,
+.blue-arrow {
   position: absolute;
   fill: var(--white);
   top: 37%;
   right: 1.875rem;
   transition: fill 0.2s ease-in-out;
 }
-
-.blue-arrow {
-  position: absolute;
-  fill: var(--main);
-  top: 37%;
-  right: 1.875rem;
-  transition: fill 0.2s ease-in-out;
+@media screen and (max-width: 375px) {
+  .white-arrow,
+  .blue-arrow {
+    top: 30%;
+    right: 0.3125rem;
+  }
 }

@@ -128,18 +128,17 @@ img {
   display: block;
 }
 
-.white-arrow {
+.white-arrow,
+.blue-arrow {
   position: absolute;
   fill: var(--white);
   top: 37%;
   right: rem(30);
   transition: fill .2s ease-in-out;
+
+  @include xxs {
+    top: 30%;
+    right: rem(5);
+  }
 }
 
-.blue-arrow {
-  position: absolute;
-  fill: var(--main);
-  top: 37%;
-  right: rem(30);
-  transition: fill .2s ease-in-out;
-}
