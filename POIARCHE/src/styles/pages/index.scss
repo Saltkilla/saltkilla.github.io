@@ -111,6 +111,7 @@
     }
 
     &__btn {
+        border: rem(2) solid var(--main);
         padding: rem(20) rem(30);
         font-size: rem(30);
     }

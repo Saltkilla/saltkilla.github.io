@@ -9,8 +9,9 @@ include ../components/mixins/caseTextPart
     .container
         section.section
             .section__header
-                svg.section__arrow.back-arrow(width="24" height="25" viewBox="0 0 24 25")
-                    use(xlink:href='#backArrow')
+                a(href="index.html") 
+                    svg.section__arrow.back-arrow(width="24" height="25" viewBox="0 0 24 25")
+                        use(xlink:href='#backArrow')
                 h1.section__title.section__title--mb0 БЦ Миллениум
             .case
                 .case__section
