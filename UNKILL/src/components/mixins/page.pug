@@ -9,7 +9,7 @@ mixin page(activePage, title, wrpClass)
       meta(name='viewport' content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0")
       title=viewTitle
 
-      link(href='assets/css/swiper.css' rel='stylesheet')
+      link(href='https://unpkg.com/swiper@6/swiper-bundle.min.css' rel='stylesheet')
       link(href='assets/css/styles.min.css' rel='stylesheet')
 
     body(class='page')
@@ -22,5 +22,5 @@ mixin page(activePage, title, wrpClass)
 
       include ../footer
 
-    script(src='assets/js/swiper(lib).js')
+    script(src='https://unpkg.com/swiper@6/swiper-bundle.min.js')
     script(src='assets/js/index.js')

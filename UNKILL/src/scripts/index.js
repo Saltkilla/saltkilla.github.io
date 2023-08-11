@@ -160,8 +160,9 @@ try {
 
 // slider
 
-const bookSlider = new Swiper('.bool-slider', {
+const bookSlider = new Swiper('.book-slider', {
     slidesPerView: 'auto',
     slidesPerGroup: 1,
     spaceBetween: 24,
+    simulateTouch: true,
   });
