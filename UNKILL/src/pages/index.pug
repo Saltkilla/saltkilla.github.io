@@ -1,5 +1,94 @@
 include ../components/mixins/page
+include ../components/mixins/btn
+include ../components/mixins/aboutCard
+include ../components/mixins/numberCard
+include ../components/mixins/bookCard
 
-+page('Главная', 'index-page', true)
-
-   
++page(null, 'Главная', 'index-page')
+   section.hero-about.section
+      img.hero-about__img.hero-about__img--block(src="./assets/images/hero-bg-xxs.png", alt="Фон")
+      .container.hero-about__container
+         img.hero-about__img.hero-about__img--none(src="./assets/images/hero-bg.png", alt="Фон")
+         h1.main-title.z-index Ведущий путь к научному прогрессу
+         +btn('hero-about__btn z-index') Опубликовать статью →
+         .hero-about__card-block.z-index
+            +aboutCard('1', 'Публикуем качественные исследования', 'Открываем мир качественных исследований и делаем науку доступной для всех')
+            +aboutCard('2', 'Междисциплинарный обмен знаниями', 'Приломление границ в науке: сближение и обмен знаниями междисциплинарных исследований')
+            +aboutCard('3', 'Открытый доступ к научным публикациям', 'Открываем двери в мир науки: свободный доступ к качественным научным публикациям')
+   section.numbers.section
+      .container.numbers__container
+         +numberCard('30+ лет', 'Издательской деятельности')
+         +numberCard('200+', 'Изданных книг и журналов')
+         +numberCard('5200', 'Довольных клиентов')
+         +numberCard('30', 'Научных сотрудников высшей категории')
+   section.section
+      .container
+         h2.section__title Наши книги
+         .books
+            +bookCard(false, '1', 'Теория и практика страхования', 'Издательство «Анкил»', ['текст', 'аудио'], false, null)
+            +bookCard(false, '2', 'Страхование жизни: тарифы и резевы взносов. Финансовые основы страхования жизни', 'Издательство «Анкил»', ['аудио', 'аудио'], false, null)
+            +bookCard(false, '3', 'Экономика страхования и перестрахования', 'Издательство «Анкил»', ['текст', 'аудио'], false, null)
+            +bookCard(false, '4', 'Общества взаимного страхования', 'К.Е. Турбина · В.Н. Дядьков', ['аудио', 'аудио'], false, null)
+            +bookCard(false, '5', 'Введение в перестрахование', 'Кристоф Пфайффер', ['текст', 'аудио'], false, null)
+            +bookCard(false, '6', 'Транспортное страхование в России и странах Балтии', 'В.Н. Томилин', ['текст', 'аудио'], false, null)
+            +bookCard(false, '7', 'Финансовое управление в страховых компаниях (перевод с английского)', 'Издательство «Анкил»', ['аудио', 'аудио'], false, null)
+            +bookCard(false, '8', 'Введение в продажу страхования или как научиться продавать надежду', 'Р.Т. Юлдашев', ['текст', 'аудио'], false, null)
+         .swiper.book-slider.none
+            .swiper-wrapper
+               .swiper-slide.book-slide
+                  +bookCard(false, '1', 'Теория и практика страхования', 'Издательство «Анкил»', ['текст', 'аудио'], false, null)
+               .swiper-slide.book-slide
+                  +bookCard(false, '2', 'Страхование жизни: тарифы и резевы взносов. Финансовые основы страхования жизни', 'Издательство «Анкил»', ['аудио', 'аудио'], false, null)
+               .swiper-slide.book-slide 
+                  +bookCard(false, '3', 'Экономика страхования и перестрахования', 'Издательство «Анкил»', ['текст', 'аудио'], false, null)
+               .swiper-slide.book-slide 
+                  +bookCard(false, '4', 'Общества взаимного страхования', 'К.Е. Турбина · В.Н. Дядьков', ['аудио', 'аудио'], false, null)
+               .swiper-slide.book-slide 
+                  +bookCard(false, '5', 'Введение в перестрахование', 'Кристоф Пфайффер', ['текст', 'аудио'], false, null)
+               .swiper-slide.book-slide
+                  a.btn.book-btn-slider(href="/") Смотреть всё →
+         .el-center
+            a.btn.book-btn(href="/") Смотреть всё →
+   section.section.blue
+      .blue__content
+         svg.blue__icon(width="58" height="58" viewBox="0 0 58 58")
+            use(xlink:href="#medal")
+         h2.blue__title Главная задача — это популяризация и повышение уровня страховой культуры в России и странах СНГ
+   section.section
+      .container
+       h2.section__title Наши издания включены в список ВАК
+       .hac
+         .hac__header
+            h3.hac__list-title Страховое дело
+            span.hac__info (ISSN 0869-7574)
+         ul.hac__list.hac__list--mb.list-reset
+            li.hac__item
+               h4.hac__item-title Математические и инструментальные методы экономики (экономические науки)
+               span.hac__number 08.00.13
+            li.hac__item
+               h4.hac__item-title Финансы (экономические науки)
+               span.hac__number 5.2.4
+            li.hac__item
+               h4.hac__item-title Мировая экономика (экономические науки)
+               span.hac__number 5.2.5
+         .hac__header
+            h3.hac__list-title Управление риском
+            span.hac__info (ISSN 1684-6303)
+         ul.hac__list.list-reset
+            li.hac__item
+               h4.hac__item-title Экономика и управление народным хозяйством (по отраслям и сферам деятельности) (экономические науки)
+               span.hac__number 08.00.13
+            li.hac__item
+               h4.hac__item-title Математические и инструментальные методы экономики (экономические науки)
+               span.hac__number 5.2.4
+            li.hac__item
+               h4.hac__item-title Экономическая теория (экономические науки)
+               span.hac__number 5.2.1
+            li.hac__item
+               h4.hac__item-title Финансы (экономические науки)
+               span.hac__number 5.2.4
+            li.hac__item
+               h4.hac__item-title Мировая экономика (экономические науки)
+               span.hac__number 5.2.5
+         .el-center
+            a.btn.btn--transparent.hac-btn(href="/") На сайт ВАК

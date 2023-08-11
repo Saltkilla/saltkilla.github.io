@@ -1,6 +1,6 @@
 @use 'sass:math';
 
-@function rem($size) {
+@function inRem($size) {
   @if unitless($size) {
     $remSize: math.div($size, 16);
 
@@ -8,5 +8,4 @@
   } @else {
     @error 'Не число';
   }
-}
-
+} 

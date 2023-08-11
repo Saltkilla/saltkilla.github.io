@@ -8,68 +8,22 @@
     flex-direction: column;
 }
 
-@mixin grid3 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: rem(25);
-}
-
-@mixin card-title {
-    font-family: Pixeloid-Sans;
-    font-size: rem(30);
-    line-height: 135%;
-
-    @include xs {
-        font-size: rem(22);
-    }
-}
-
-@mixin dscr {
-    font-family: Pixeloid-Sans;
-    font-size: rem(18);
-    line-height: 135%;
-}
-
-@mixin list {
-    padding: 0;
-    margin: 0;
-    list-style-type: square;
-    padding-left: rem(20);
-}
-
-@mixin item {
-    @include dscr;
-    color: var(--grey);
-}
-
-@mixin link {
-    @include dscr;
-    color: var(--black);
-    transition: color .2s ease-in-out;
-
-    &:hover {
-        color: var(--main);
-    }
-
-    &:focus {
-        outline: none;
-        color: var(--main);
-    }
-
-    &:active {
-        color: var(--main--active);
-    }
-}
-
 @mixin wrraper {
+    display: none;
     position: fixed;
     left: 0;
     top: 0;
     bottom: 0;
     right: 0;
     background-color: rgba(0, 0, 0, 0.8);
-    display: flex;
     justify-content: center;
     align-items: center;
     z-index: 100;
+}
+
+@mixin line-clamp {
+    display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
 }

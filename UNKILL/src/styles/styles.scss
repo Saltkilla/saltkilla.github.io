@@ -1,14 +1,10 @@
+@import "functions";
 @import "normalize";
 @import "fonts";
 @import "colors";
 @import "variables";
-@import "functions";
 @import "media-queries";
 @import "mixins";
-
-@import './components/header';
-@import './pages/index';
-@import './components/footer';
 
 *,
 :after,
@@ -31,9 +27,8 @@ html {
 
 body {
   margin: 0;
-  font-family: Pixeloid-Sans, Pixeloid-Mono, Onest, serif;
+  font-family: Onest, serif;
   font-size: 16px !important;
-  font-weight: 400;
   text-align: left;
 }
 
@@ -63,64 +58,43 @@ img {
 
 .container {
   width: 100%;
-  max-width: rem(1200);
+  max-width: inRem(1240);
   margin-right: auto;
   margin-left: auto;
   padding: 0 var(--x-offset-main);
+}
+
+.main-title {
+  max-width: inRem(800);
+  margin-bottom: inRem(56);
+  font-size: inRem(80);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 110%;
+  letter-spacing: inRem(-1.6);
+  text-align: center;
+
+  @include xs {
+    max-width: inRem(342);
+    font-size: inRem(45);
+  }
 }
 
 .section {
   margin-bottom: var(--section-margin);
 
   &__title {
-    margin-bottom: rem(40);
-    font-family: Pixeloid-Sans;
-    font-size: rem(55);
-    line-height: 135%;
+    max-width: inRem(640);
+    margin-bottom: inRem(44);
+    font-size: inRem(40);
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: inRem(0.4);
     color: var(--black);
-
-    &--mb0 {
-      margin-bottom: 0;
+    
+    @include xs {
+      font-size: inRem(32);
     }
-  }
-
-  &__header {
-    @include flex-row;
-    margin-bottom: rem(40);
-  }
-
-  &__arrow {
-    margin-right: rem(30);
-  }
-
-  @include e-md {
-    &__title {
-      font-size: rem(40);
-    }
-  }
-
-  @include xs {
-    &__title {
-      font-size: rem(30);
-    }
-  }
-}
-
-.main-title {
-  max-width: rem(878);
-  margin-bottom: rem(48);
-  text-align: center;
-  font-family: Pixeloid-Sans;
-  font-size: rem(110);
-  line-height: 110%;
-
-  @include e-md {
-    max-width: rem(559);
-    font-size: rem(70);
-  }
-
-  @include xs {
-    font-size: rem(50);
   }
 }
 
@@ -128,37 +102,44 @@ img {
   display: none;
 }
 
-.flex {
-  display: flex;
-}
-
 .block {
   display: block;
 }
 
-.white-arrow,
-.blue-arrow {
-  position: absolute;
-  top: 37%;
-  right: rem(30);
-  transition: fill .2s ease-in-out;
+.z-index {
+  z-index: 1;
+}
 
-  @include xxs {
-    top: 30%;
-    right: rem(5);
+.close {
+  stroke: var(--black);
+  transition: stroke .25s ease-in-out;
+
+  &:hover {
+    stroke: var(--main);
   }
 }
 
-.blue-arrow {
-  fill: var(--main);
+.el-center {
+  text-align: center
 }
 
-.white-arrow {
-  fill: var(--white);
+.list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-.back-arrow {
-  fill: var(--grey);
+
+
+@import './components/btn';
+@import './components/aboutCard';
+@import './components/numberCard';
+@import './components/bookCard';
+
+@import './components/header';
+@import './pages/index';
+@import './components/footer';
+
+.flex {
+  display: flex;
 }
-
-

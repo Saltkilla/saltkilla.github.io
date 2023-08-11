@@ -1,4 +1,4 @@
-mixin page(title, wrpClass, header=true)
+mixin page(activePage, title, wrpClass)
   - var viewTitle = title ? `Анкил - ${title}` : "Анкил"
   doctype html
   html(lang='ru')
@@ -9,12 +9,12 @@ mixin page(title, wrpClass, header=true)
       meta(name='viewport' content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0")
       title=viewTitle
 
+      link(href='assets/css/swiper.css' rel='stylesheet')
       link(href='assets/css/styles.min.css' rel='stylesheet')
 
     body(class='page')
       include ../svgSprites
-      if header == true
-        include ../header
+      include ../header
 
       main(class=`main ${wrpClass}`)
         block
@@ -22,4 +22,5 @@ mixin page(title, wrpClass, header=true)
 
       include ../footer
 
+    script(src='assets/js/swiper(lib).js')
     script(src='assets/js/index.js')

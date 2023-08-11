@@ -1,38 +1,38 @@
 @import "functions";
 @import "media-queries";
 
-// :root {
-//   //margins
-//   --x-offset-main: #{rem(20)};
-//   --section-margin: #{rem(150)};
-// }
+:root {
+  //margins
+  --x-offset-main: #{inRem(20)};
+  --section-margin: #{inRem(150)};
+}
 
-// @include e-md {
-//   :root {
-//     //margins
-//     --x-offset-main: #{rem(70)};
-//     --section-margin: #{rem(80)};
-//   }
-// }
+@include e-md {
+  :root {
+    //margins
+    --x-offset-main: #{inRem(70)};
+    --section-margin: #{inRem(80)};
+  }
+}
 
-// @include md {
-//   :root {
-//     //margins
-//     --x-offset-main: #{rem(50)};
-//   }
-// }
+@include md {
+  :root {
+    //margins
+    --x-offset-main: #{inRem(50)};
+  }
+}
 
-// @include s {
-//   :root {
-//     //margins
-//     --x-offset-main: #{rem(35)};
-//   }
-// }
+@include s {
+  :root {
+    //margins
+    --x-offset-main: #{inRem(35)};
+  }
+}
 
-// @include xs {
-//   :root {
-//     //margins
-//     --x-offset-main: #{rem(25)};
-//     --section-margin: #{rem(70)};
-//   }
-// }
+@include xs {
+  :root {
+    //margins
+    --x-offset-main: #{inRem(25)};
+    --section-margin: #{inRem(70)};
+  }
+}
