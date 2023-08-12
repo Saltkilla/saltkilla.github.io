@@ -83,6 +83,10 @@ img {
 .section {
   margin-bottom: var(--section-margin);
 
+  &--last-mb {
+    margin-bottom: var(--section-margin-last);
+  }
+
   &__title {
     max-width: inRem(640);
     margin-bottom: inRem(44);
@@ -129,13 +133,36 @@ img {
   list-style: none;
 }
 
+.opacity-07 {
+  opacity: 0.7;
+}
+
+.opacity-1 {
+  opacity: 1;
+}
+
+.gradient {
+  position: relative;
+
+  &::after {
+    content: "";
+    display: block;   
+    width: 100%;
+    height: 100%;   
+    position: absolute;
+    top: 0;     
+    left: 0;  
+    background: transparent;
+    background-image: linear-gradient(0deg, rgb(248, 248, 248), rgba(248, 248, 248, 0));
+  }
+}
 
 
 @import './components/btn';
 @import './components/aboutCard';
 @import './components/numberCard';
 @import './components/bookCard';
-@import './components/swiper';
+@import './components/tag';
 
 @import './components/header';
 @import './pages/index';

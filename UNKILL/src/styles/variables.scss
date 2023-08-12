@@ -4,7 +4,8 @@
 :root {
   //margins
   --x-offset-main: #{inRem(20)};
-  --section-margin: #{inRem(150)};
+  --section-margin: #{inRem(140)};
+  --section-margin-last: #{inRem(200)};
 }
 
 @include e-md {
@@ -12,6 +13,7 @@
     //margins
     --x-offset-main: #{inRem(70)};
     --section-margin: #{inRem(80)};
+    --section-margin-last: #{inRem(150)};
   }
 }
 
@@ -33,6 +35,7 @@
   :root {
     //margins
     --x-offset-main: #{inRem(25)};
-    --section-margin: #{inRem(70)};
+    --section-margin: #{inRem(60)};
+    --section-margin-last: #{inRem(130)};
   }
 }

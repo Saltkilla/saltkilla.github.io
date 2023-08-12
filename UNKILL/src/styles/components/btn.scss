@@ -48,6 +48,30 @@
         }
     }
 
+    &--grey {
+        background-color: var(--grey);
+        padding: inRem(22) inRem(91);
+        border: inRem(2) solid var(--grey);
+
+        
+        &:hover {
+            background-color: var(--white);
+            color: var(--main);
+            border: inRem(2) solid var(--main);
+        }
+
+        &:focus {
+            outline: none;
+            background-color: var(--white);
+            color: var(--main);
+            border: inRem(2) solid var(--main);;
+        }
+
+        &:active {
+            color: var(--main-active);
+        }
+    }
+
     @include xs {
         font-size: inRem(20);
         padding: inRem(30) inRem(25);

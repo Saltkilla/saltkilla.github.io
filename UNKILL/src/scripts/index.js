@@ -166,3 +166,73 @@ const bookSlider = new Swiper('.book-slider', {
     spaceBetween: 24,
     simulateTouch: true,
   });
+
+
+// tags
+
+function goArray(nodeList) {
+    const array = [];
+    for (const node of nodeList) {
+        array.push(node);
+      }
+    return array;
+}
+
+function hiddenTags(blocksArray) {
+    let i = 0;
+
+    for(let tag in blocksArray) {
+        i++;
+        if(i < 6) continue;
+        else {
+            blocksArray[tag].classList.add('none');
+        }
+    }
+}
+
+function opacityTags(blocksArray) {
+    let i = 0;
+
+    for(let tag in blocksArray) {
+        i++;
+        if(i < 3) continue;
+        else {
+            blocksArray[tag].classList.add('opacity-07');
+        }
+    }
+}
+
+function showTags(btn, array, block) {
+        for(let tag of array) {
+            if(tag.classList.contains('none')) {
+                tag.classList.remove('none');
+            }
+            if(tag.classList.contains('opacity-07')) {
+                tag.classList.remove('opacity-07');
+            }
+        }
+        btn.classList.add('none');
+        block.classList.add('tags__block--active');
+}
+
+const moreBtnUp = document.querySelector('.tags__btn--up');
+const moreBtnDown = document.querySelector('.tags__btn--down');
+const tagBlocksUp = document.querySelectorAll('.tag-block--up');
+const tagBlocksDown = document.querySelectorAll('.tag-block--down');
+const upperBlock = document.querySelector('.tags__block--up');
+const downBlock = document.querySelector('.tags__block--down');
+const tagBlocksUpArray = goArray(tagBlocksUp);
+const tagBlocksDownArray = goArray(tagBlocksDown);
+
+hiddenTags(tagBlocksUpArray);
+opacityTags(tagBlocksUpArray);
+hiddenTags(tagBlocksDownArray);
+opacityTags(tagBlocksDownArray);
+
+moreBtnUp.addEventListener('click', () => {
+    showTags(moreBtnUp, tagBlocksUpArray, upperBlock);
+});
+
+moreBtnDown.addEventListener('click', () => {
+    showTags(moreBtnDown, tagBlocksDownArray, downBlock);
+});

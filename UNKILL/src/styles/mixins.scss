@@ -27,3 +27,29 @@
   -webkit-box-orient: vertical;  
   overflow: hidden;
 }
+
+@mixin nav-link {
+    font-size: inRem(20);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    color: var(--black);
+    transition: color .25s ease-in-out;
+
+    &:not(:last-child) {
+      margin-right: inRem(32);
+    }
+
+    &:hover {
+      color: var(--main);
+    }
+
+    &:focus {
+      color: var(--main);
+      outline: none;
+    }
+
+    &:active {
+      color: var(--main-active);
+    }
+}

@@ -1,0 +1,22 @@
+.tag-block {
+    max-width: inRem(580);
+    padding: inRem(23) inRem(20);
+    background-color: var(--white);
+    border-radius: inRem(50);
+
+    &--active {
+        display: block;
+    }
+
+    &--opacity {
+        opacity: 1;
+    }
+
+    &__text {
+        font-size: inRem(20);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%;
+        color: var(--black);
+    }
+}
