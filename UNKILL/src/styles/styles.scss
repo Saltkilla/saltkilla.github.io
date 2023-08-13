@@ -157,6 +157,10 @@ img {
   }
 }
 
+.mb0 {
+  margin-bottom: 0;
+}
+
 
 @import './components/btn';
 @import './components/aboutCard';
@@ -167,6 +171,12 @@ img {
 @import './components/header';
 @import './pages/index';
 @import './components/footer';
+
+@import './pages/journal';
+@import './components/journalCard';
+
+@import './pages/author';
+@import './components/editionCard';
 
 .flex {
   display: flex;
