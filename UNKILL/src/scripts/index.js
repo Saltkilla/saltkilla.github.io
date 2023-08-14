@@ -7,30 +7,30 @@ const burgerLinks = document.querySelectorAll('.burger-menu__link');
 const burgerClose = document.querySelector('.burger-menu__icon');
 
 const hideBurgerMenu = () => {
-  document.body.style.overflow = '';
-  burgerWrraper.classList.remove('flex');
-  burgerMenu.classList.remove('show');
-  burgerBtn.classList.remove('active');
+    document.body.style.overflow = '';
+    burgerWrraper.classList.remove('flex');
+    burgerMenu.classList.remove('show');
+    burgerBtn.classList.remove('active');
 }
 const showBurgerMenu = () => {
-  document.body.style.overflow = 'hidden';
-  burgerWrraper.classList.add('flex');
-  burgerMenu.classList.add('show');
-  burgerBtn.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    burgerWrraper.classList.add('flex');
+    burgerMenu.classList.add('show');
+    burgerBtn.classList.add('active');
 }
 
 const toggleBurgerMenu = () => {
-  if (burgerMenu.classList.contains('show')) {
-    hideBurgerMenu()
-  } else {
-    showBurgerMenu()
-  }
+    if (burgerMenu.classList.contains('show')) {
+        hideBurgerMenu()
+    } else {
+        showBurgerMenu()
+    }
 };
 
 burgerBtn.addEventListener('click', toggleBurgerMenu);
 
 burgerLinks.forEach(link => {
-  link.addEventListener('click', toggleBurgerMenu);
+    link.addEventListener('click', toggleBurgerMenu);
 })
 
 burgerClose.addEventListener('click', hideBurgerMenu)
@@ -38,20 +38,20 @@ burgerClose.addEventListener('click', hideBurgerMenu)
 //  Select
 
 try {
-  const getTemplate = (data = [], placeholder, selectedId) => {
-    let text = placeholder ?? 'placeholder не указан'
-  
-    const items = data.map(item => {
-        let cls = ''
-        if (item.id === selectedId) {
-            text = item.value
-            cls = 'selected'
-        }
-        return `
+    const getTemplate = (data = [], placeholder, selectedId) => {
+        let text = placeholder ?? 'placeholder не указан'
+
+        const items = data.map(item => {
+            let cls = ''
+            if (item.id === selectedId) {
+                text = item.value
+                cls = 'selected'
+            }
+            return `
             <li class="select__item ${cls}" data-type="item" data-id="${item.id}">${item.value}</li>
         `
-    })
-    return `
+        })
+        return `
         <input type="hidden" class="hidden__input">
         <div class="select__backdrop" data-type="backdrop"></div>
         <div class="select__input" data-type="input">
@@ -66,95 +66,95 @@ try {
             </ul>
         </div>
     `
-  }
-  class Select {
-    constructor(selector, options) {
-        this.$el = document.querySelector(selector)
-        this.options = options
-        this.selectedId = options.selectedId
-  
-        this.render()
-        this.setup()
     }
-  
-    render() {
-        const { placeholder, data } = this.options;
-        this.$el.classList.add('select');
-        this.$el.innerHTML = getTemplate(data, placeholder, this.selectedId);
-    }
-    setup() {
-        this.clickHandler = this.clickHandler.bind(this);
-        this.$el.addEventListener('click', this.clickHandler);
-        this.$arrow = this.$el.querySelector('[data-type="arrow"]');
-        this.$value = this.$el.querySelector('[data-type="value"]');
-    }
-  
-    clickHandler(event) {
-        const { type } = event.target.dataset;
-        if (type === 'input') {
-            this.toggle();
-        } else if (type === 'item') {
-            const id = event.target.dataset.id
-            this.select(id);
-        }  else if (type === 'backdrop') {
+    class Select {
+        constructor(selector, options) {
+            this.$el = document.querySelector(selector)
+            this.options = options
+            this.selectedId = options.selectedId
+
+            this.render()
+            this.setup()
+        }
+
+        render() {
+            const { placeholder, data } = this.options;
+            this.$el.classList.add('select');
+            this.$el.innerHTML = getTemplate(data, placeholder, this.selectedId);
+        }
+        setup() {
+            this.clickHandler = this.clickHandler.bind(this);
+            this.$el.addEventListener('click', this.clickHandler);
+            this.$arrow = this.$el.querySelector('[data-type="arrow"]');
+            this.$value = this.$el.querySelector('[data-type="value"]');
+        }
+
+        clickHandler(event) {
+            const { type } = event.target.dataset;
+            if (type === 'input') {
+                this.toggle();
+            } else if (type === 'item') {
+                const id = event.target.dataset.id
+                this.select(id);
+            } else if (type === 'backdrop') {
+                this.close();
+            }
+        }
+
+        get isOpen() {
+            return this.$el.classList.contains('open');
+        }
+
+        get current() {
+            return this.options.data.find(item => item.id === this.selectedId);
+        }
+
+        select(id) {
+            this.selectedId = id;
+            this.$value.textContent = this.current.value;
+
+            this.$el.querySelectorAll(`[data-type="item"]`).forEach(el => el.classList.remove('selected'));
+            this.$el.querySelector(`[data-id="${id}"]`).classList.add('selected');
+
+            this.options.onSelect ? this.options.onSelect(this.current) : null;
             this.close();
         }
+
+        toggle() {
+            this.isOpen ? this.close() : this.open();
+        }
+
+        open() {
+            this.$el.classList.add('open');
+            this.$arrow.classList.add('open');
+        }
+
+        close() {
+            this.$el.classList.remove('open');
+            this.$arrow.classList.remove('open');
+        }
+
+        destroy() {
+            this.$el.removeEventListener('click', this.clickHandler);
+            this.$el.innerHTML = '';
+        }
     }
-  
-    get isOpen() {
-        return this.$el.classList.contains('open');
-    }
-  
-    get current() {
-        return this.options.data.find(item => item.id === this.selectedId);
-    }
-  
-    select(id) {
-        this.selectedId = id;
-        this.$value.textContent = this.current.value;
-  
-        this.$el.querySelectorAll(`[data-type="item"]`).forEach( el => el.classList.remove('selected'));
-        this.$el.querySelector(`[data-id="${id}"]`).classList.add('selected');
-  
-        this.options.onSelect ? this.options.onSelect(this.current) : null;
-        this.close();
-    }
-  
-    toggle() {
-        this.isOpen ? this.close() : this.open();
-    }
-  
-    open() {
-        this.$el.classList.add('open');
-        this.$arrow.classList.add('open');
-    }
-  
-    close() {
-        this.$el.classList.remove('open');
-        this.$arrow.classList.remove('open');
-    }
-  
-    destroy() {
-        this.$el.removeEventListener('click', this.clickHandler);
-        this.$el.innerHTML = '';
-    }
-  }
-  
-  const headerSelect = new Select('.header__select', {
-    placeholder: 'Меню',
-    selectedId: '1',
-    data: [
-        {id: 'journal', value: 'Журналы'},
-        {id: 'author', value: 'Авторам'},
-        {id: 'contact', value: 'Контакты'},
-    ],
-    onSelect(item) {
-        const input = document.querySelector('.hidden__input')
-        input.value = item.value
-    } 
-  })
+
+    const headerSelect = new Select('.header__select', {
+        placeholder: 'Меню',
+        selectedId: '1',
+        data: [
+            { id: 'journal', value: 'Журналы' },
+            { id: 'author', value: 'Авторам' },
+            { id: 'contact', value: 'Контакты' },
+        ],
+        onSelect(item) {
+            const input = document.querySelector('.hidden__input')
+            input.value = item.value
+        }
+    })
 } catch (error) {
-  console.log(`Возникла ошибка ${error.name} : ${error.message}`);
+    console.log(`Возникла ошибка ${error.name} : ${error.message}`);
 }
 
 
@@ -165,7 +165,7 @@ const bookSlider = new Swiper('.book-slider', {
     slidesPerGroup: 1,
     spaceBetween: 24,
     simulateTouch: true,
-  });
+});
 
 
 // tags
@@ -174,28 +174,32 @@ function goArray(nodeList) {
     const array = [];
     for (const node of nodeList) {
         array.push(node);
-      }
+    }
     return array;
 }
 
-function hiddenTags(blocksArray) {
+function hiddenElements(array, numberOfEl) {
     let i = 0;
+    const hiddenElArray = [];
 
-    for(let tag in blocksArray) {
+    for (let el in array) {
         i++;
-        if(i < 6) continue;
+        if (i < numberOfEl) continue;
         else {
-            blocksArray[tag].classList.add('none');
+            array[el].classList.add('none');
+            hiddenElArray.push(array[el]);
         }
     }
+
+    return hiddenElArray;
 }
 
 function opacityTags(blocksArray) {
     let i = 0;
 
-    for(let tag in blocksArray) {
+    for (let tag in blocksArray) {
         i++;
-        if(i < 3) continue;
+        if (i < 3) continue;
         else {
             blocksArray[tag].classList.add('opacity-07');
         }
@@ -203,36 +207,92 @@ function opacityTags(blocksArray) {
 }
 
 function showTags(btn, array, block) {
-        for(let tag of array) {
-            if(tag.classList.contains('none')) {
-                tag.classList.remove('none');
-            }
-            if(tag.classList.contains('opacity-07')) {
-                tag.classList.remove('opacity-07');
-            }
+    for (let tag of array) {
+        if (tag.classList.contains('none')) {
+            tag.classList.remove('none');
         }
-        btn.classList.add('none');
-        block.classList.add('tags__block--active');
+        if (tag.classList.contains('opacity-07')) {
+            tag.classList.remove('opacity-07');
+        }
+    }
+    btn.classList.add('none');
+    block.classList.add('tags__block--active');
 }
 
-const moreBtnUp = document.querySelector('.tags__btn--up');
-const moreBtnDown = document.querySelector('.tags__btn--down');
-const tagBlocksUp = document.querySelectorAll('.tag-block--up');
-const tagBlocksDown = document.querySelectorAll('.tag-block--down');
-const upperBlock = document.querySelector('.tags__block--up');
-const downBlock = document.querySelector('.tags__block--down');
-const tagBlocksUpArray = goArray(tagBlocksUp);
-const tagBlocksDownArray = goArray(tagBlocksDown);
+try {
+    const moreBtnUp = document.querySelector('.tags__btn--up');
+    const moreBtnDown = document.querySelector('.tags__btn--down');
+    const tagBlocksUp = document.querySelectorAll('.tag-block--up');
+    const tagBlocksDown = document.querySelectorAll('.tag-block--down');
+    const upperBlock = document.querySelector('.tags__block--up');
+    const downBlock = document.querySelector('.tags__block--down');
+    const tagBlocksUpArray = goArray(tagBlocksUp);
+    const tagBlocksDownArray = goArray(tagBlocksDown);
 
-hiddenTags(tagBlocksUpArray);
-opacityTags(tagBlocksUpArray);
-hiddenTags(tagBlocksDownArray);
-opacityTags(tagBlocksDownArray);
+    hiddenElements(tagBlocksUpArray, 6);
+    opacityTags(tagBlocksUpArray);
+    hiddenElements(tagBlocksDownArray, 6);
+    opacityTags(tagBlocksDownArray);
 
-moreBtnUp.addEventListener('click', () => {
-    showTags(moreBtnUp, tagBlocksUpArray, upperBlock);
-});
+    moreBtnUp.addEventListener('click', () => {
+        showTags(moreBtnUp, tagBlocksUpArray, upperBlock);
+    });
 
-moreBtnDown.addEventListener('click', () => {
-    showTags(moreBtnDown, tagBlocksDownArray, downBlock);
-});
+    moreBtnDown.addEventListener('click', () => {
+        showTags(moreBtnDown, tagBlocksDownArray, downBlock);
+    });
+} catch {
+    console.log('Элемент не найден на этой странице');
+}
+
+
+// download more
+
+try {
+    const allMoreBtn = document.querySelectorAll('.documents__btn')
+
+    allMoreBtn.forEach(btn => {
+        const btnContainer = btn.parentElement;
+        const list = btnContainer.parentElement;
+        const allItems = list.querySelectorAll('.documents__item');
+        const gradient = list.querySelector('.gradient');
+        const allItemsArray = goArray(allItems);
+
+        const hiddenElementsArray = hiddenElements(allItemsArray, 4);
+
+        btn.addEventListener('click', () => {
+            for (let hiddenEl of hiddenElementsArray) {
+                hiddenEl.style.display = 'block';
+            }
+            gradient.classList.add('gradient--none');
+            btn.style.display = 'none';
+        })
+    })
+} catch {
+    console.log('Элемент не найден на этой странице');
+}
+
+// copy
+
+try{
+    const allCopy = document.querySelectorAll('.contact__copy');
+
+    allCopy.forEach(copy => {
+        const header = copy.parentElement;
+        const card = header.parentElement;
+        
+        const dscr = card.querySelector('.contact__dscr');
+
+        copy.addEventListener('click', () => {
+            const message = document.createElement('p');
+            message.classList.add('succsess-copy');
+            message.textContent = 'Скопировано';
+            header.append(message);
+
+            setTimeout(() => message.remove(), 2000);
+            navigator.clipboard.writeText(dscr.textContent);
+        })
+    })
+} catch {
+    console.log('Текст не скопирован');
+}
