@@ -869,6 +869,11 @@ img {
     max-width: 80px;
   }
 }
+@media screen and (max-width: 390px) {
+  .logo-img {
+    max-width: 60px;
+  }
+}
 
 .logo-item {
   font-size: 20px;
@@ -881,11 +886,15 @@ img {
     font-size: 18px;
   }
 }
+@media screen and (max-width: 390px) {
+  .logo-item {
+    font-size: 16px;
+  }
+}
 
 .contacts {
   display: flex;
   align-items: center;
-  padding-bottom: 30px;
 }
 .contacts__block {
   display: flex;
@@ -921,6 +930,9 @@ img {
   .contacts__block {
     margin-right: 0;
     margin-bottom: 10px;
+  }
+  .contacts__link {
+    font-size: 12px;
   }
 }
 
