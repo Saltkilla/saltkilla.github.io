@@ -1,6 +1,5 @@
-mixin bookCard(main=true, img, title, author, tags, buy=true, price)
-    - var classList = main ? 'book-card-xs' : 'book-card'
-    div(class=`${classList}`)
+mixin bookCard(img, title, author, tags, buy=true, price)
+    .book-card
         img.book-card__img(src=`./assets/images/book${img}.png`, alt="Книга")
         if buy===true
             .book-card__buy

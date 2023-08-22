@@ -1,5 +1,4 @@
-.book-card,
-.book-card-xs {
+.book-card {
 
     &__img {
         margin-bottom: inRem(6);
@@ -90,10 +89,6 @@
     }
 
     @include xs {
-        .book-card-xs {
-            height: 100%;
-        }
-
         &__title {
             max-width: inRem(250);
         }

@@ -197,14 +197,10 @@ img {
   font-weight: 500;
   line-height: normal;
   color: var(--white);
+}
 
-  // @include e-md {
-  //   font-size: inRem(22);
-  // }
-
-  // @include xs {
-  //   font-size: inRem(20);
-  // }
+.slider-arrow {
+  fill: #EDEDED;
 }
 
 
@@ -228,6 +224,8 @@ img {
 @import './pages/article';
 
 @import './pages/contact';
+
+@import './pages/market';
 
 .flex {
   display: flex;

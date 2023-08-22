@@ -167,6 +167,21 @@ const bookSlider = new Swiper('.book-slider', {
     simulateTouch: true,
 });
 
+const marketSlider = new Swiper('.market-slider', {
+    navigation: {
+        nextEl: '.slider-arrow-next',
+        prevEl: '.slider-arrow-prev',
+    },
+    pagination: {
+        el: '.swiper-pagination',
+    },
+    slidesPerView: 'auto',
+    slidesPerGroup: 1,
+    spaceBetween: 0,
+    simulateTouch: true,
+    loop: true,
+});
+
 
 // tags
 
