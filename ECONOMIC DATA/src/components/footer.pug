@@ -1,2 +1,10 @@
+include ../components/mixins/btn
+
 .footer
-    .container
+    .container.footer__container
+        a.footer__logo(href='index.html')
+            svg.footer__svg(width="213" height="54" viewBox="0 0 213 54")
+                use(xlink:href="#logo")
+        a.btn.footer__btn(href='#hero') Вернуться наверх
+            svg.up-arrow(width="22" height="25" viewBox="0 0 22 25")
+                use(xlink:href="#upArrow")

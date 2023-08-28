@@ -1,0 +1,69 @@
+.btn {
+    position: relative;
+    padding: rem(20) rem(73) rem(20) rem(35);
+    border-radius: rem(50);
+    border: rem(2) solid var(--white);
+    background-color: transparent;
+    color: var(--white);
+    font-family: Onest;
+    font-size: rem(20);
+    font-weight: 500;
+    line-height: normal;
+    cursor: pointer;
+    transition: background .3s ease-in-out, color .3s ease-in-out;
+
+    &:hover {
+        background: var(--white);
+        color: var(--black);
+    }
+
+    &:hover .white-arrow {
+        fill: var(--black);
+        transform: rotate(45deg);
+    }
+
+    &:hover .up-arrow {
+        fill: var(--black);
+        transform: translateY(rem(-5));
+    }
+
+    &--white {
+        background: var(--white);
+        color: var(--black);
+        border: none;
+
+        &:hover {
+            background: var(--gradient);
+            color: var(--white);
+        }
+
+        &:hover .black-arrow {
+            fill: var(--white);
+            transform: rotate(45deg);
+        }
+    } 
+}
+
+.black-arrow,
+.white-arrow {
+    position: absolute;
+    top: rem(24);
+    right: rem(35);
+    transition: transform .3s ease-in-out, fill .3s ease-in-out;
+}
+
+.black-arrow {
+    fill: var(--black);
+}
+
+.white-arrow {
+    fill: var(--white);
+}
+
+.up-arrow {
+    fill: var(--white);
+    position: absolute;
+    top: rem(20);
+    right: rem(35);
+    transition: transform .3s ease-in-out, fill .3s ease-in-out;
+}

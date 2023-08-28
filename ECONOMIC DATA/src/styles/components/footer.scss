@@ -1,0 +1,11 @@
+.footer {
+    border-top: rem(2) solid var(--main-blue);
+    border-radius: rem(60) rem(60) 0 0;
+    padding-top: rem(77);
+    padding-bottom: rem(77);
+
+    &__container {
+        @include flex-row;
+        justify-content: space-between;
+    }
+}

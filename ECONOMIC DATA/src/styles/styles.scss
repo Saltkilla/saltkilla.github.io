@@ -6,11 +6,6 @@
 @import "media-queries";
 @import "mixins";
 
-@import './components/header';
-@import './pages/index';
-@import './components/footer';
-
-
 *,
 :after,
 :before {
@@ -36,6 +31,7 @@ body {
   font-size: 16px !important;
   font-weight: 400;
   text-align: left;
+  background-color: var(--bg-black);
 }
 
 h1,
@@ -66,5 +62,31 @@ img {
   max-width: rem(1200);
   margin-right: auto;
   margin-left: auto;
-  padding: 0 var(--x-offset-main);
+
+  @include lg {
+    padding: 0 var(--x-offset-main);
+  }
 }
+
+.section {
+  margin-bottom: rem(340);
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: rem(30);
+  }
+
+  &__title {
+    @include section-title;
+  }
+}
+
+.mb0 {
+  margin-bottom: 0;
+}
+
+@import './components/header';
+@import './pages/index';
+@import './components/footer';
+@import './components/btn';
