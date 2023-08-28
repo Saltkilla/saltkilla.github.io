@@ -1,0 +1,25 @@
+mixin page(title, wrpClass, header=true)
+  - var viewTitle = title ? `Economic data: ${title}` : "Economic data"
+  doctype html
+  html(lang='ru')
+    head
+
+      meta(charset='UTF-8')
+      meta(http-equiv="X-UA-Compatible" content="ie=edge")
+      meta(name='viewport' content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0")
+      title=viewTitle
+
+      link(href='assets/css/styles.min.css' rel='stylesheet')
+
+    body(class='page')
+      include ../svgSprites
+      if header == true
+        include ../header
+
+      main(class=`main ${wrpClass}`)
+        block
+
+
+      include ../footer
+
+    script(src='assets/js/index.js')
