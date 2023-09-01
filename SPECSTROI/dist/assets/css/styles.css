@@ -729,6 +729,13 @@ template {
   max-height: 350px;
   height: auto;
 }
+.market__model {
+  color: var(--grey);
+  padding-top: 40px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: normal;
+}
 @media screen and (max-width: 1024px) {
   .market__content {
     gap: 25px;
@@ -992,4 +999,27 @@ img {
 .btn:hover {
   padding: 19px 68px;
   font-size: 16px;
+}
+
+.up-btn {
+  font-family: Roboto;
+  font-size: 14px;
+  padding: 8px 10px;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  border: 3px solid var(--black);
+  border-radius: 10px;
+  color: var(--black);
+  background-color: var(--bg-grey);
+  transition: transform 0.15s ease-in-out;
+}
+.up-btn:hover {
+  transform: scale(1.1);
+}
+@media screen and (max-width: 680px) {
+  .up-btn {
+    bottom: 25px;
+    right: 25px;
+  }
 }
