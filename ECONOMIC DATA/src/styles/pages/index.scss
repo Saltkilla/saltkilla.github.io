@@ -52,6 +52,10 @@
     }
 
     @include tablet {
+        background-size: 100%;
+    }
+
+    @include tablet {
         &__title {
             font-size: rem(68);
         }
@@ -271,6 +275,10 @@
             margin-bottom: rem(60);
             font-size: rem(40);
         }
+
+        &__dscr {
+            font-size: rem(18);
+        }
     }
 }
 
@@ -364,12 +372,26 @@
     }
 
     &__card {
+        @include flex-column;
         position: relative;
         max-width: rem(380);
         min-height: rem(240);
         padding: rem(28) rem(44);
         background-color: var(--card-bg);
         border-radius: rem(30);
+        transition: background .25s ease-in-out;
+
+        &:hover {
+            background: var(--gradient);
+        }
+
+        &:hover .article__link {
+            color: var(--white)
+        }
+
+        &:hover .article__icon {
+            fill: var(--white)
+        }
     }
 
     &__dscr {
@@ -398,6 +420,27 @@
         display: none;
     }
 
+    &__link-block {
+        display: flex;
+        align-items: center;
+        margin-top: auto;
+    }
+
+    &__link {
+        margin-right: rem(15);
+        font-family: Onest;
+        font-size: rem(20);
+        font-weight: 400;
+        line-height: 150%;
+        color: var(--card-bg);
+        transition: color .15s ease-in-out;
+    }
+
+    &__icon {
+        fill: var(--card-bg);
+        transition: fill .15s ease-in-out;
+    }
+
     @include big-tablet {
         &__slider {
             display: flex;
@@ -413,10 +456,10 @@
         }
 
         &__card {
-            @include flex-column;
             min-height: rem(311);
             border-radius: rem(30);
             border: rem(3) solid #3246F7;
+            background-color: transparent;
         }
 
         &__icon-left,
@@ -425,23 +468,22 @@
             display: none;
         }
 
-        &__link-block {
-            display: flex;
-            align-items: center;
-            margin-top: auto;
-        }
-
         &__card--none {
             display: none;
         }
 
         &__link {
-            margin-right: rem(15);
-            font-family: Onest;
-            font-size: rem(20);
-            font-weight: 400;
-            line-height: 150%;
             color: var(--white);
+        }
+
+        &__icon {
+            fill: var(--white);
+        }
+    }
+
+    @include big-phone {
+        &__slide {
+            max-width: rem(300);
         }
     }
 

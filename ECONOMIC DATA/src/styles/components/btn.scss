@@ -10,11 +10,12 @@
     font-weight: 500;
     line-height: normal;
     cursor: pointer;
-    transition: background .3s ease-in-out, color .3s ease-in-out;
+    transition: background .3s ease-in-out, color .3s ease-in-out, padding .3s ease-in-out;
 
     &:hover {
         background: var(--white);
         color: var(--black);
+        padding-right: rem(82);
     }
 
     &:hover .white-arrow {
