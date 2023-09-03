@@ -426,6 +426,8 @@
         }
 
         &__link-block {
+            display: flex;
+            align-items: center;
             margin-top: auto;
         }
 
@@ -434,7 +436,7 @@
         }
 
         &__link {
-            margin-right: rem(10);
+            margin-right: rem(15);
             font-family: Onest;
             font-size: rem(20);
             font-weight: 400;
@@ -758,7 +760,7 @@
         }
 
         &__block {
-            background-position: top rem(270)  center;
+            background-position: top rem(270) center;
         }
 
         &__icon-bottom {
@@ -820,7 +822,7 @@
             padding-left: rem(5);
             padding-right: rem(30);
 
-            & > .white-arrow {
+            &>.white-arrow {
                 top: rem(20);
                 right: rem(20);
             }
@@ -840,7 +842,7 @@
     }
 
     @media(max-width: 350px) {
-        &__btn > .white-arrow {
+        &__btn>.white-arrow {
             display: none;
         }
 

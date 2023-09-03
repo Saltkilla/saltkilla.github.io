@@ -948,13 +948,15 @@ img {
     display: none;
   }
   .article__link-block {
+    display: flex;
+    align-items: center;
     margin-top: auto;
   }
   .article__card--none {
     display: none;
   }
   .article__link {
-    margin-right: 0.625rem;
+    margin-right: 0.9375rem;
     font-family: Onest;
     font-size: 1.25rem;
     font-weight: 400;
