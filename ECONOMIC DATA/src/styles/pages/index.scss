@@ -847,7 +847,13 @@
 
     @media(max-width: 414px) {
         &__block {
-            background-position: top rem(270) center;
+            background-position: top rem(222) center;
+        }
+    }
+
+    @media(max-width: 396px) {
+        &__block {
+            background-position: top rem(260) center;
         }
     }
 
@@ -879,7 +885,13 @@
         }
 
         &__block {
-            background-position: top rem(250) center;
+            background-position: top rem(200) center;
+        }
+    }
+
+    @media(max-width: 379px) {
+        &__block {
+            background-position: top rem(230) center;
         }
     }
 

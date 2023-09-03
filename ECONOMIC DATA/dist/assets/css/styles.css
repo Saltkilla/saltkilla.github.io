@@ -1321,7 +1321,12 @@ img {
 }
 @media (max-width: 414px) {
   .request__block {
-    background-position: top 16.875rem center;
+    background-position: top 13.875rem center;
+  }
+}
+@media (max-width: 396px) {
+  .request__block {
+    background-position: top 16.25rem center;
   }
 }
 @media screen and (max-width: 390px) {
@@ -1346,7 +1351,12 @@ img {
     right: 0;
   }
   .request__block {
-    background-position: top 15.625rem center;
+    background-position: top 12.5rem center;
+  }
+}
+@media (max-width: 379px) {
+  .request__block {
+    background-position: top 14.375rem center;
   }
 }
 @media (max-width: 350px) {
