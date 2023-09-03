@@ -1,11 +1,3 @@
-// @include e-md {
-//     padding-top: rem(167);
-// }
-
-// @include s {
-//     padding-top: rem(228);
-// }
-
 .index-page {
     background-color: var(--bg-black);
 }
@@ -43,6 +35,60 @@
     &__btn {
         margin-right: rem(32);
     }
+
+    @include big-tablet {
+        margin-bottom: rem(200);
+        padding-bottom: 0;
+        padding-top: rem(167);
+        background-image: url('../images/background-hero-tablet.png');
+
+        &__title {
+            font-size: rem(88);
+        }
+
+        &__dscr {
+            font-size: rem(20);
+        }
+    }
+
+    @include tablet {
+        &__title {
+            font-size: rem(68);
+        }
+
+        &__btns {
+            flex-direction: column;
+        }
+
+        &__btn {
+            margin-right: 0;
+            margin-bottom: rem(20);
+            width: 100%;
+        }
+    }
+
+    @include phone {
+        margin-bottom: rem(140);
+        padding-top: rem(228);
+        background-image: url('../images/background-hero-phone.png');
+        background-size: 100% rem(579);
+        background-position: top rem(-20) center;
+
+        &__title {
+            font-size: rem(40);
+        }
+
+        &__dscr {
+            font-size: rem(16);
+        }
+
+        &__btns>button {
+            font-size: rem(18);
+            padding-right: rem(65);
+            padding-left: rem(15);
+        }
+    }
+
 }
 
 .about {
@@ -61,6 +107,96 @@
         max-width: rem(585);
         margin-bottom: rem(68);
         color: var(--text-grey);
+    }
+
+    @include desktop {
+        background-size: rem(755) rem(564);
+        background-position: top rem(246) right;
+    }
+
+    @include big-tablet {
+        padding-top: 0;
+        padding-bottom: rem(100);
+        background-size: rem(512) rem(499);
+        background-position: top rem(0) right;
+
+        &__title {
+            max-width: rem(412);
+        }
+
+        &__dscr {
+            max-width: rem(412);
+        }
+    }
+
+    @include tablet {
+        padding-bottom: rem(356);
+        background-position: right bottom;
+
+        &__title {
+            max-width: 55%;
+        }
+
+        &__dscr {
+            max-width: 75%;
+        }
+
+        &__btn {
+            width: 55%;
+        }
+    }
+
+    @include min-tablet {
+        margin-bottom: 0;
+        padding-bottom: rem(435);
+
+        &__title {
+            max-width: 70%;
+        }
+
+        &__dscr {
+            max-width: 90%;
+        }
+
+        &__btn {
+            width: 70%;
+        }
+    }
+
+    @include big-phone {
+        padding-bottom: 0;
+        background-size: 100% auto;
+        margin-bottom: rem(140);
+
+        &__dscr {
+            max-width: 100%;
+            margin-bottom: rem(270);
+        }
+
+        &__btn {
+            width: 100%;
+            text-align: center;
+            padding-right: rem(35);
+        }
+
+        &__title {
+            max-width: 80%;
+        }
+    }
+
+    @include phone {
+        &__dscr {
+            margin-bottom: rem(230);
+            font-size: rem(18);
+        }
+
+        &__title {
+            margin-bottom: rem(48);
+        }
+
+        &__btn {
+            padding-right: rem(55);
+        }
     }
 }
 
@@ -88,6 +224,54 @@
     &__dscr {
         @include text-S;
     }
+
+    @include big-tablet {
+        &__title {
+            box-sizing: content-box;
+            min-height: rem(90);
+            font-size: rem(22);
+        }
+
+        &__dscr {
+            font-size: rem(18);
+        }
+    }
+
+    @include tablet {
+        &__grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        &__title {
+            min-height: 0;
+            box-sizing: border-box;
+        }
+    }
+
+    @include min-tablet {
+        &__grid {
+            grid-template-columns: 1fr;
+        }
+
+        &__card {
+            max-width: 85%;
+        }
+
+    }
+
+    @include big-phone {
+        &__main-title {
+            max-width: 100%;
+            font-size: rem(52);
+        }
+    }
+
+    @include phone {
+        &__main-title {
+            margin-bottom: rem(60);
+            font-size: rem(40);
+        }
+    }
 }
 
 .action {
@@ -105,6 +289,58 @@
         @include text-L;
         margin-bottom: rem(68);
         color: var(--text-grey);
+    }
+
+    &__btn--hidden {
+        display: none;
+    }
+
+    @include big-tablet {
+        &__img {
+            max-width: rem(323);
+        }
+    }
+
+    @include tablet {
+        &__container {
+            flex-direction: column-reverse;
+            gap: rem(48);
+        }
+
+        &__btn {
+            display: none;
+        }
+
+        &__btn--hidden {
+            display: block;
+        }
+
+        &__title {
+            margin-bottom: rem(48);
+            max-width: 65%;
+        }
+
+        &__dscr {
+            margin: 0;
+            max-width: 75%;
+        }
+
+        &__img {
+            max-width: 65%;
+            height: auto;
+        }
+    }
+
+    @include big-phone {
+        &__btn--hidden {
+            width: 100%;
+        }
+    }
+
+    @include phone {
+        &__dscr {
+            font-size: rem(18);
+        }
     }
 }
 
@@ -157,6 +393,75 @@
         top: rem(44);
         left: rem(-188);
     }
+
+    &__slider {
+        display: none;
+    }
+
+    @include big-tablet {
+        &__slider {
+            display: flex;
+        }
+
+        &__row {
+            display: none;
+        }
+
+        &__slide {
+            max-width: rem(380);
+            margin-right: rem(32);
+        }
+
+        &__card {
+            @include flex-column;
+            min-height: rem(311);
+            border-radius: rem(30);
+            border: rem(3) solid #3246F7;
+        }
+
+        &__icon-left,
+        &__icon-right,
+        &__icon-card {
+            display: none;
+        }
+
+        &__link-block {
+            margin-top: auto;
+        }
+
+        &__card--none {
+            display: none;
+        }
+
+        &__link {
+            margin-right: rem(10);
+            font-family: Onest;
+            font-size: rem(20);
+            font-weight: 400;
+            line-height: 150%;
+            color: var(--white);
+        }
+    }
+
+    @include phone {
+        &__dscr {
+            font-size: rem(18);
+        }
+
+        &__slide {
+            max-width: 90%;
+            margin-right: rem(20);
+        }
+
+        &__card {
+            padding: rem(35) rem(20) rem(45) rem(20);
+            min-height: rem(240);
+        }
+
+        &__title {
+            width: 100%;
+        }
+    }
 }
 
 .step {
@@ -196,6 +501,101 @@
         max-width: rem(324);
         @include text-L;
         color: var(--text-grey);
+
+        &--column {
+            display: none;
+        }
+    }
+
+    @include big-tablet {
+        &__dscr {
+            font-size: rem(20);
+        }
+
+        &__number {
+            left: rem(14);
+            font-size: rem(20);
+        }
+
+        &__card {
+            max-width: rem(241);
+            min-height: rem(239);
+        }
+
+        &__icon {
+            max-width: rem(140);
+        }
+    }
+
+    @include tablet {
+        &__grid {
+            @include flex-column;
+            gap: rem(80);
+            max-width: 100%;
+        }
+
+        &__dscr--column {
+            display: block;
+            position: absolute;
+            bottom: rem(-45);
+            left: 0;
+            max-width: rem(500);
+        }
+
+        &__card {
+            min-height: rem(400);
+            max-width: rem(400);
+        }
+
+        &__icon {
+            max-width: rem(250);
+        }
+
+        &__number {
+            left: rem(24);
+        }
+
+        &__grid--display {
+            display: none;
+        }
+    }
+
+    @include big-phone {
+        &__card {
+            max-width: rem(300);
+            min-height: rem(300);
+        }
+
+        &__icon {
+            max-width: rem(170);
+        }
+
+        &__dscr--column {
+            bottom: rem(-75);
+        }
+
+        &__grid {
+            gap: rem(100);
+        }
+
+        &__title {
+            width: 100%;
+        }
+    }
+
+    @include phone {
+        &__card {
+            max-width: rem(261);
+            min-height: rem(259);
+        }
+
+        &__icon {
+            max-width: rem(121);
+        }
+
+        &__number {
+            left: rem(15);
+        }
     }
 }
 
@@ -221,13 +621,21 @@
         right: rem(382);
     }
 
+    &__icon-tablet {
+        display: none;
+    }
+
     &__block {
         max-width: rem(1800);
         margin-left: auto;
         margin-right: auto;
-        padding: rem(156) rem(917) rem(160) rem(402);
+        padding: rem(156) 0 rem(160) rem(402);
         border-radius: rem(100);
-        background: #1900B4 url('../images/request.png') top rem(79) right rem(213)/ rem(715) rem(737) no-repeat;
+        background: #1900B4 url('../images/request.png') top rem(109) right rem(213)/ rem(690) rem(707) no-repeat;
+    }
+
+    &__content {
+        max-width: 35%;
     }
 
     &__dscr {
@@ -242,7 +650,7 @@
 
     &__input {
         width: 100%;
-        padding: rem(20);
+        padding: rem(10) rem(20) rem(10) rem(20);
         font-family: Onest;
         font-size: rem(20);
         font-weight: 400;
@@ -267,6 +675,178 @@
 
         &:hover {
             border-color: var(--white);
+        }
+    }
+
+    @include desktop {
+        padding-right: 25px;
+        padding-left: 25px;
+
+        &__block {
+            padding-left: rem(302);
+            background-position: right center;
+        }
+    }
+
+    @include min-desktop {
+        &__block {
+            padding-left: rem(102);
+            background-size: rem(515) auto;
+            background-position: right center;
+        }
+
+        &__content {
+            max-width: 50%;
+        }
+    }
+
+    @include big-tablet {
+        padding-bottom: rem(250);
+
+        &__block {
+            @include flex-column;
+            align-items: center;
+            padding-left: 0;
+            background-size: rem(330) auto;
+            background-position: top rem(68) right 0;
+        }
+
+        &__content {
+            max-width: 50%;
+        }
+
+        &__icon-right {
+            display: none;
+        }
+
+        &__icon-tablet {
+            position: absolute;
+            display: block;
+            bottom: 0;
+            left: 30%;
+        }
+
+        &__icon-bottom {
+            right: rem(142);
+        }
+
+        &__icon-left {
+            bottom: rem(220);
+        }
+    }
+
+    @include tablet {
+        &__icon-left {
+            display: none;
+        }
+
+        &__icon-tablet {
+            left: 15%;
+        }
+    }
+
+    @include min-tablet {
+        &__content {
+            padding-left: rem(30);
+            padding-right: rem(30);
+            max-width: 100%;
+            text-align: center;
+        }
+
+        &__title {
+            margin-bottom: rem(220);
+        }
+
+        &__block {
+            background-position: top rem(270)  center;
+        }
+
+        &__icon-bottom {
+            max-height: rem(355);
+        }
+    }
+
+    @include big-phone {
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: rem(180);
+
+        &__block {
+            border-radius: rem(30);
+            padding-top: rem(68);
+            padding-bottom: rem(68);
+            background-position: top rem(220) center;
+            background-size: rem(121) auto;
+        }
+
+        &__icon-bottom {
+            max-height: rem(190);
+            right: 13%;
+        }
+
+        &__icon-tablet {
+            max-height: rem(130);
+            left: 2%;
+        }
+
+        &__title {
+            font-size: rem(38);
+            margin-bottom: rem(110);
+        }
+
+        &__btn {
+            width: 100%;
+            font-size: rem(18);
+            padding-left: rem(25);
+        }
+    }
+
+    @media(max-width: 418px) {
+        &__block {
+            background-position: top rem(270) center;
+        }
+    }
+
+    @include phone {
+        &__dscr {
+            font-size: rem(20);
+        }
+
+        &__title {
+            font-size: rem(36);
+        }
+
+        &__btn {
+            padding-left: rem(5);
+            padding-right: rem(30);
+
+            & > .white-arrow {
+                top: rem(20);
+                right: rem(20);
+            }
+        }
+
+        &__icon-tablet {
+            left: 0;
+        }
+
+        &__icon-bottom {
+            right: 0;
+        }
+
+        &__block {
+            background-position: top rem(250) center;
+        }
+    }
+
+    @media(max-width: 350px) {
+        &__btn > .white-arrow {
+            display: none;
+        }
+
+        &__btn {
+            padding-left: rem(10);
+            padding-right: rem(10);
         }
     }
 }

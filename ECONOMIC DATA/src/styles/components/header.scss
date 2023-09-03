@@ -4,4 +4,20 @@
     &__container {
         padding-top: rem(100);
     }
+
+    @include big-tablet {
+        &__container {
+            padding-top: rem(80);
+        }
+    }
+
+    @include phone {
+        &__container {
+            padding-top: rem(60);
+        }
+
+        &__svg {
+            max-width: rem(140);
+        }
+    }
 }

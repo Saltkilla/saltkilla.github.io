@@ -42,11 +42,14 @@ include ../components/mixins/btn
                     p.reason__dscr На основе знаний лучших авторов в области экономики, ваш ИИ сможет создавать новые методы анализа
     section.section.action
         .container.action__container
+            +btn('action__btn action__btn--hidden') Скачать архив
+                    svg.white-arrow(width="18" height="18" viewBox="0 0 18 18")
+                        use(xlink:href="#whiteArrow")
             img.action__img(src="./assets/images/action.png", alt="Картинка")
             .action__text
                 h2.section__title.action__title оставляйте заявку
                 p.action__dscr Вы получите архив из 10 000 статей из экономических и юридических журналов, которых нет в открытом доступе
-                +btn('about__btn') Скачать архив
+                +btn('action__btn') Скачать архив
                     svg.white-arrow(width="18" height="18" viewBox="0 0 18 18")
                         use(xlink:href="#whiteArrow")
     section.section.article
@@ -57,7 +60,7 @@ include ../components/mixins/btn
         .container
             .section__header
                 h2.section__title.article__title Посмотрите примеры статей
-                .article__card
+                .article__card.article__card--none
                     p.article__dscr The Dynamics of Digital Disruption: Navigating New Markets
             .article__row
                 .article__card
@@ -71,6 +74,43 @@ include ../components/mixins/btn
                     svg.article__icon-card(width="188" height="128" viewBox="0 0 188 128")
                         use(xlink:href="#articleArrow3")
                     p.article__dscr Sustainable Growth Strategies in a Globalized Economy
+            .swiper.article__slider
+                .swiper-wrapper
+                    .swiper-slide.article__slide
+                        .article__card
+                            p.article__dscr The Dynamics of Digital Disruption: Navigating New Markets
+                            .article__link-block
+                                a.article__link(href="/") Смотреть
+                                svg.article__icon-right(width="602" height="150" viewBox="0 0 602 150")
+                                    use(xlink:href="#articleCardArrow")
+                    .swiper-slide.article__slide
+                        .article__card
+                            p.article__dscr Rethinking Supply Chain Resilience: Lessons from Recent Crises
+                            .article__link-block
+                                a.article__link(href="/") Смотреть
+                                svg.article__icon-right(width="602" height="150" viewBox="0 0 602 150")
+                                    use(xlink:href="#articleCardArrow")
+                    .swiper-slide.article__slide
+                        .article__card
+                            p.article__dscr The Role of AI and Automation in Labor Market Evolution
+                            .article__link-block
+                                a.article__link(href="/") Смотреть
+                                svg.article__icon-right(width="602" height="150" viewBox="0 0 602 150")
+                                    use(xlink:href="#articleCardArrow")
+                    .swiper-slide.article__slide
+                        .article__card
+                            p.article__dscr Inflation Trends and Monetary Policy Shifts: A Comparative Analysis
+                            .article__link-block
+                                a.article__link(href="/") Смотреть
+                                svg.article__icon-right(width="602" height="150" viewBox="0 0 602 150")
+                                    use(xlink:href="#articleCardArrow")
+                    .swiper-slide.article__slide
+                        .article__card
+                            p.article__dscr Sustainable Growth Strategies in a Globalized Economy
+                            .article__link-block
+                                a.article__link(href="/") Смотреть
+                                svg.article__icon-right(width="602" height="150" viewBox="0 0 602 150")
+                                    use(xlink:href="#articleCardArrow")
     section.section.step
         .container
             h2.section__title.step__title Всё очень просто
@@ -79,15 +119,18 @@ include ../components/mixins/btn
                     p.step__number 01
                     svg.step__icon(width="173" height="141" viewBox="0 0 173 141")
                         use(xlink:href="#stepIcon1")
+                    p.step__dscr.step__dscr--column Заполните заявку в форме ниже
                 .step__card
                     p.step__number 02
                     svg.step__icon(width="200" height="200" viewBox="0 0 200 200")
                         use(xlink:href="#stepIcon2")
+                    p.step__dscr.step__dscr--column Получите счёт и оплатите архив
                 .step__card
                     p.step__number 03
                     svg.step__icon(width="200" height="200" viewBox="0 0 200 200")
                         use(xlink:href="#stepIcon3")
-            .step__grid.mb0
+                    p.step__dscr.step__dscr--column Вышлем вам полный архив на почту
+            .step__grid.step__grid--display.mb0
                 p.step__dscr Заполните заявку в форме ниже
                 p.step__dscr Получите счёт и оплатите архив
                 p.step__dscr Вышлем вам полный архив на почту
@@ -98,6 +141,8 @@ include ../components/mixins/btn
             use(xlink:href="#requestArrow2")
         svg.request__icon-bottom(width="150" height="655" viewBox="0 0 150 655")
             use(xlink:href="#requestArrow3")
+        svg.request__icon-tablet(width="289" height="223" viewBox="0 0 289 223")
+            use(xlink:href="#tabletArrow")
         .request__block
             .request__content
                 p.request__dscr Заполните форму

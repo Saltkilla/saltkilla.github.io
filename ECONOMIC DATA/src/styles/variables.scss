@@ -7,7 +7,7 @@
   --section-margin: #{rem(150)};
 }
 
-@include e-md {
+@include big-tablet {
   :root {
     //margins
     --x-offset-main: #{rem(100)};
@@ -15,21 +15,21 @@
   }
 }
 
-@include md {
+@include tablet {
   :root {
     //margins
     --x-offset-main: #{rem(70)};
   }
 }
 
-@include s {
+@include big-phone {
   :root {
     //margins
     --x-offset-main: #{rem(30)};
   }
 }
 
-@include xs {
+@include phone {
   :root {
     //margins
     --x-offset-main: #{rem(25)};

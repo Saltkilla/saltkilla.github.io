@@ -38,6 +38,10 @@
     font-weight: 400;
     line-height: 120%;
     color: var(--white);
+
+    @include phone {
+        font-size: rem(36);
+    }
 }
 
 @mixin section-title {
@@ -46,4 +50,12 @@
     font-weight: 400;
     line-height: 120%;
     color: var(--white);
+
+    @include big-tablet {
+        font-size: rem(58);
+    }
+
+    @include phone {
+        font-size: rem(40);
+    }
 }

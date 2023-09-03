@@ -8,4 +8,42 @@
         @include flex-row;
         justify-content: space-between;
     }
+
+    &__btn--tablet {
+        display: none;
+    }
+
+    @include min-tablet {
+        padding-top: rem(52);
+        padding-bottom: rem(40);
+
+        &__svg {
+            max-width: rem(171);
+        }
+
+        &__btn {
+            display: none;
+        }
+
+        &__btn--tablet {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: rem(20) rem(35);
+
+            & > .up-arrow {
+                position: static;
+            }
+        }
+    }
+
+    @media(max-width: 340px) {
+        &__svg {
+            max-width: rem(140);
+        }
+
+        &__btn--tablet {
+            padding: rem(15) rem(25);
+        }
+    }
 }

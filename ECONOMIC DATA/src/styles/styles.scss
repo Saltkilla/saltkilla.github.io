@@ -63,7 +63,7 @@ img {
   margin-right: auto;
   margin-left: auto;
 
-  @include lg {
+  @include big-tablet {
     padding: 0 var(--x-offset-main);
   }
 }
@@ -80,13 +80,17 @@ img {
   &__title {
     @include section-title;
   }
+
+  @include big-tablet {
+    margin-bottom: rem(140);
+  }
 }
 
 .mb0 {
   margin-bottom: 0;
 }
 
+@import './components/btn';
 @import './components/header';
 @import './pages/index';
 @import './components/footer';
-@import './components/btn';

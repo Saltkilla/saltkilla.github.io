@@ -1,42 +1,49 @@
-$Breakpoint__xx-small: 375px;
-$Breakpoint__x-small: 560px;
-$Breakpoint__small: 680px;
-$Breakpoint__medium: 920px;
-$Breakpoint__extra-medium: 1024px;
-$Breakpoint__large: 1200px;
+$Breakpoint__phone: 390px;
+$Breakpoint__big-phone: 600px;
+$Breakpoint__min-tablet: 768px;
+$Breakpoint__tablet: 900px;
+$Breakpoint__big-tablet: 1200px;
+$Breakpoint__min-desktop: 1500px;
+$Breakpoint__desktop: 1800px;
 
-@mixin lg {
-  @media screen and (max-width: #{$Breakpoint__large}) {
+@mixin desktop {
+  @media screen and (max-width: #{$Breakpoint__desktop}) {
     @content;
   }
 }
 
-@mixin e-md {
-  @media screen and (max-width: #{$Breakpoint__extra-medium}) {
+@mixin min-desktop {
+  @media screen and (max-width: #{$Breakpoint__min-desktop}) {
     @content;
   }
 }
 
-@mixin md {
-  @media screen and (max-width: #{$Breakpoint__medium}) {
+@mixin big-tablet {
+  @media screen and (max-width: #{$Breakpoint__big-tablet}) {
     @content;
   }
 }
 
-@mixin s {
-  @media screen and (max-width: #{$Breakpoint__small}) {
+@mixin tablet {
+  @media screen and (max-width: #{$Breakpoint__tablet}) {
     @content;
   }
 }
 
-@mixin xs {
-  @media screen and (max-width: #{$Breakpoint__x-small}) {
+@mixin min-tablet {
+  @media screen and (max-width: #{$Breakpoint__min-tablet}) {
     @content;
   }
 }
 
-@mixin xxs {
-  @media screen and (max-width: #{$Breakpoint__xx-small}) {
+@mixin big-phone {
+  @media screen and (max-width: #{$Breakpoint__big-phone}) {
+    @content;
+  }
+}
+
+@mixin phone {
+  @media screen and (max-width: #{$Breakpoint__phone}) {
     @content;
   }
 }
