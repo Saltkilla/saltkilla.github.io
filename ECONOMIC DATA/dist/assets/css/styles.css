@@ -1281,7 +1281,7 @@ img {
     padding-left: 1.5625rem;
   }
 }
-@media (max-width: 418px) {
+@media (max-width: 414px) {
   .request__block {
     background-position: top 16.875rem center;
   }
