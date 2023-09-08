@@ -37,116 +37,114 @@ burgerClose.addEventListener('click', hideBurgerMenu)
 
 //  Select
 
-try {
-    const getTemplate = (data = [], placeholder, selectedId) => {
-        let text = placeholder ?? 'placeholder не указан'
+const getTemplate = (data = [], placeholder, selectedId) => {
+    let text = placeholder ?? 'placeholder не указан'
 
-        const items = data.map(item => {
-            let cls = ''
-            if (item.id === selectedId) {
-                text = item.value
-                cls = 'selected'
-            }
-            return `
-            <li class="select__item ${cls}" data-type="item" data-id="${item.id}">${item.value}</li>
-        `
-        })
-        return `
-        <input type="hidden" class="hidden__input">
-        <div class="select__backdrop" data-type="backdrop"></div>
-        <div class="select__input" data-type="input">
-            <span data-type="value">${text}</span>
-            <svg class="select__icon" width="16" height="10" viewBox="0 0 16 10" data-type="arrow">
-                  <use xlink:href="#selectArrow"></use>
-            </svg>
-        </div>
-        <div class="select__dropdown">
-            <ul class="select__list">
-                ${items.join('')}
-            </ul>
-        </div>
-    `
+    const items = data.map(item => {
+        let cls = ''
+        if (item.id === selectedId) {
+            text = item.value
+            cls = 'selected'
+        }
+        return `<li class="select__item ${cls}" data-type="item" data-id="${item.id}"><a href='${item.link}'>${item.value}</a></li>`
+    })
+    return `
+    <input type="hidden" class="hidden__input">
+    <div class="select__backdrop" data-type="backdrop"></div>
+    <div class="select__input" data-type="input">
+        <span data-type="value">${text}</span>
+        <svg class="select__icon" width="16" height="10" viewBox="0 0 16 10" data-type="arrow">
+              <use xlink:href="#selectArrow"></use>
+        </svg>
+    </div>
+    <div class="select__dropdown">
+        <ul class="select__list">
+            ${items.join('')}
+        </ul>
+    </div>
+`
+}
+class Select {
+    constructor(selector, options) {
+        this.$el = document.querySelector(selector)
+        this.options = options
+        this.selectedId = options.selectedId
+
+        this.render()
+        this.setup()
     }
-    class Select {
-        constructor(selector, options) {
-            this.$el = document.querySelector(selector)
-            this.options = options
-            this.selectedId = options.selectedId
 
-            this.render()
-            this.setup()
-        }
+    render() {
+        const { placeholder, data } = this.options;
+        this.$el.classList.add('select');
+        this.$el.innerHTML = getTemplate(data, placeholder, this.selectedId);
+    }
+    setup() {
+        this.clickHandler = this.clickHandler.bind(this);
+        this.$el.addEventListener('click', this.clickHandler);
+        this.$arrow = this.$el.querySelector('[data-type="arrow"]');
+        this.$value = this.$el.querySelector('[data-type="value"]');
+    }
 
-        render() {
-            const { placeholder, data } = this.options;
-            this.$el.classList.add('select');
-            this.$el.innerHTML = getTemplate(data, placeholder, this.selectedId);
-        }
-        setup() {
-            this.clickHandler = this.clickHandler.bind(this);
-            this.$el.addEventListener('click', this.clickHandler);
-            this.$arrow = this.$el.querySelector('[data-type="arrow"]');
-            this.$value = this.$el.querySelector('[data-type="value"]');
-        }
-
-        clickHandler(event) {
-            const { type } = event.target.dataset;
-            if (type === 'input') {
-                this.toggle();
-            } else if (type === 'item') {
-                const id = event.target.dataset.id
-                this.select(id);
-            } else if (type === 'backdrop') {
-                this.close();
-            }
-        }
-
-        get isOpen() {
-            return this.$el.classList.contains('open');
-        }
-
-        get current() {
-            return this.options.data.find(item => item.id === this.selectedId);
-        }
-
-        select(id) {
-            this.selectedId = id;
-            this.$value.textContent = this.current.value;
-
-            this.$el.querySelectorAll(`[data-type="item"]`).forEach(el => el.classList.remove('selected'));
-            this.$el.querySelector(`[data-id="${id}"]`).classList.add('selected');
-
-            this.options.onSelect ? this.options.onSelect(this.current) : null;
+    clickHandler(event) {
+        const { type } = event.target.dataset;
+        if (type === 'input') {
+            this.toggle();
+        } else if (type === 'item') {
+            const id = event.target.dataset.id
+            this.select(id);
+        } else if (type === 'backdrop') {
             this.close();
         }
-
-        toggle() {
-            this.isOpen ? this.close() : this.open();
-        }
-
-        open() {
-            this.$el.classList.add('open');
-            this.$arrow.classList.add('open');
-        }
-
-        close() {
-            this.$el.classList.remove('open');
-            this.$arrow.classList.remove('open');
-        }
-
-        destroy() {
-            this.$el.removeEventListener('click', this.clickHandler);
-            this.$el.innerHTML = '';
-        }
     }
 
+    get isOpen() {
+        return this.$el.classList.contains('open');
+    }
+
+    get current() {
+        return this.options.data.find(item => item.id === this.selectedId);
+    }
+
+    select(id) {
+        this.selectedId = id;
+        this.$value.textContent = this.current.value;
+
+        this.$el.querySelectorAll(`[data-type="item"]`).forEach(el => el.classList.remove('selected'));
+        this.$el.querySelector(`[data-id="${id}"]`).classList.add('selected');
+
+        this.options.onSelect ? this.options.onSelect(this.current) : null;
+        this.close();
+    }
+
+    toggle() {
+        this.isOpen ? this.close() : this.open();
+    }
+
+    open() {
+        this.$el.classList.add('open');
+        this.$arrow.classList.add('open');
+    }
+
+    close() {
+        this.$el.classList.remove('open');
+        this.$arrow.classList.remove('open');
+    }
+
+    destroy() {
+        this.$el.removeEventListener('click', this.clickHandler);
+        this.$el.innerHTML = '';
+    }
+}
+
+try {
     const headerSelect = new Select('.header__select', {
         placeholder: 'Меню',
         selectedId: '1',
         data: [
-            { id: 'journal', value: 'Журналы' },
-            { id: 'author', value: 'Авторам' },
-            { id: 'contact', value: 'Контакты' },
+            { id: 'journal', value: 'Журналы', link: './journal.html' },
+            { id: 'author', value: 'Авторам', link: './author.html' },
+            { id: 'contact', value: 'Контакты', link: './contact.html' },
         ],
         onSelect(item) {
             const input = document.querySelector('.hidden__input')
@@ -154,7 +152,26 @@ try {
         }
     })
 } catch (error) {
-    console.log(`Возникла ошибка ${error.name} : ${error.message}`);
+    console.log('Элемент не найден на странице');
+}
+
+try {
+    const headerInsuranceSelect = new Select('.header__insurance-select', {
+        placeholder: 'Меню',
+        selectedId: '1',
+        data: [
+            { id: 'journal', value: 'Архив', link: '#' },
+            { id: 'author', value: 'Авторам', link: './author.html' },
+            { id: 'contact', value: 'Контакты', link: './contact.html' },
+        ],
+        onSelect(item) {
+            const input = document.querySelector('.hidden__input')
+            input.value = item.value
+        }
+    })
+} catch (error) {
+    console.log('Элемент не найден на странице');
+    console.log(error)
 }
 
 
@@ -289,13 +306,13 @@ try {
 
 // copy
 
-try{
+try {
     const allCopy = document.querySelectorAll('.contact__copy');
 
     allCopy.forEach(copy => {
         const header = copy.parentElement;
         const card = header.parentElement;
-        
+
         const dscr = card.querySelector('.contact__dscr');
 
         copy.addEventListener('click', () => {
@@ -310,4 +327,65 @@ try{
     })
 } catch {
     console.log('Текст не скопирован');
+}
+
+// more insurance journal
+
+try {
+    const moreBtnInsurance = document.querySelector('.i-about__more');
+    const hiddenBlockInsurance = document.querySelector('.i-about__hidden-block');
+
+    moreBtnInsurance.addEventListener('click', () => {
+        hiddenBlockInsurance.style.display = 'block';
+        moreBtnInsurance.style.display = 'none';
+    })
+} catch {
+    console.log('Элемент не найден на странице');
+}
+
+// Accordion
+
+try {
+
+    const allAccordionItem = document.querySelectorAll('.accordion-item__header');
+    const allAccordionAnswer = document.querySelectorAll('.accordion-item__body');
+
+    let i = 0;
+
+    for (let itemHeader of allAccordionItem) {
+        i++;
+        if (i === 4) {
+            const item = itemHeader.parentNode;
+            const body = item.querySelector('.accordion-item__body');
+            const answer = itemHeader.nextElementSibling;
+            const svgIcon = itemHeader.querySelector('.accordion-item__icon');
+            svgIcon.classList.add('accordion-item__icon--active');
+            itemHeader.classList.add('accordion-item__header--active');
+            answer.style.maxHeight = (answer.scrollHeight) + 'px';
+        }
+    }
+
+    allAccordionItem.forEach(item => {
+        item.addEventListener('click', () => {
+            let answer = item.nextElementSibling;
+            let svgIcon = item.querySelector('.accordion-item__icon');
+
+            if (answer.style.maxHeight) {
+                allAccordionAnswer.forEach(body => {
+                    body.style.maxHeight = null;
+                })
+                svgIcon.classList.remove('accordion-item__icon--active');
+                item.classList.remove('accordion-item__header--active');
+            } else {
+                allAccordionAnswer.forEach(body => {
+                    body.style.maxHeight = null;
+                })
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+                svgIcon.classList.add('accordion-item__icon--active');
+                item.classList.add('accordion-item__header--active');
+            }
+        })
+    })
+} catch {
+    console.log('Элемент не найден на странице');
 }

@@ -203,6 +203,22 @@ img {
   fill: #EDEDED;
 }
 
+.i-title {
+  font-size: inRem(40);
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: inRem(0.4);
+  color: var(--black);
+
+  @include xs-plus {
+    font-size: inRem(38);
+  }
+
+  @include xs {
+    font-size: inRem(32);
+  }
+}
+
 
 
 @import './components/btn';
@@ -226,6 +242,10 @@ img {
 @import './pages/contact';
 
 @import './pages/market';
+
+@import './pages/insuranceBusiness';
+@import './components/iStepCard';
+@import './components/accordionItem';
 
 .flex {
   display: flex;

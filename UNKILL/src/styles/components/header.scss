@@ -58,12 +58,18 @@
     z-index: 101;
   }
 
+    &__select,
+    &__insurance-select {
+      display: none;
+    }
+
   @include e-md {
     &__nav {
       display: none;
     }
 
-    &__select {
+    &__select,
+    &__insurance-select {
       display: block;
     }
 
@@ -83,7 +89,8 @@
   }
 
   @include s {
-    &__select {
+    &__select,
+    &__insurance-select {
       display: none;
     }
 

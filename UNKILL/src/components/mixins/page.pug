@@ -14,8 +14,10 @@ mixin page(activePage, title, wrpClass)
 
     body(class='page')
       include ../svgSprites
-      include ../header
-
+      if activePage === 'insuranceBusiness'
+        include ../headerInsuranceBusiness
+      else 
+        include ../header
       main(class=`main ${wrpClass}`)
         block
 
