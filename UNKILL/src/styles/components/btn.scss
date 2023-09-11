@@ -56,19 +56,18 @@
         
         &:hover {
             background-color: var(--white);
-            color: var(--main);
-            border: inRem(2) solid var(--main);
+            color: var(--grey);
         }
 
         &:focus {
             outline: none;
             background-color: var(--white);
-            color: var(--main);
-            border: inRem(2) solid var(--main);;
+            color: var(--grey);
+            border: inRem(2) solid var(--grey);;
         }
 
         &:active {
-            color: var(--main-active);
+            color: var(--grey);
         }
     }
 

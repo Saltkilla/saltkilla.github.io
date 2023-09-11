@@ -1,4 +1,5 @@
 .book-card {
+    position: relative;
 
     &__img {
         margin-bottom: inRem(6);
@@ -71,6 +72,15 @@
         color: var(--main);
         border-radius: inRem(50);
         transition: color .25s ease-in-out, background-color .25s ease-in-out;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+        }
 
         &:hover {
             background-color: var(--main);

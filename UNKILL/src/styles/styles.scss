@@ -97,8 +97,10 @@ img {
     color: var(--black);
 
     &--content {
-      min-height: inRem(153);
-      box-sizing: content-box;
+      @media(max-width: 965px) {
+        min-height: inRem(153);
+        box-sizing: content-box;
+      }
 
       @include md {
         min-height: 0;

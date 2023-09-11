@@ -281,7 +281,7 @@
 
     &__text,
     &__item {
-        margin-bottom: inRem(35);
+        margin-bottom: inRem(70);
         font-size: inRem(20);
         font-weight: 400;
         line-height: 140%;
@@ -306,8 +306,9 @@
         margin-bottom: 0;
     }
 
-    &__more {
-        margin-bottom: inRem(52);
+    &__more,
+    &__hidden {
+        margin-top: auto;
         font-size: inRem(20);
         font-style: normal;
         font-weight: 700;

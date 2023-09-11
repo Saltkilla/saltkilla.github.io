@@ -197,6 +197,7 @@ const marketSlider = new Swiper('.market-slider', {
     spaceBetween: 0,
     simulateTouch: true,
     loop: true,
+    speed: 800,
 });
 
 
@@ -334,10 +335,16 @@ try {
 try {
     const moreBtnInsurance = document.querySelector('.i-about__more');
     const hiddenBlockInsurance = document.querySelector('.i-about__hidden-block');
+    const hiddenBtnInsurance =  document.querySelector('.i-about__hidden');
 
     moreBtnInsurance.addEventListener('click', () => {
         hiddenBlockInsurance.style.display = 'block';
         moreBtnInsurance.style.display = 'none';
+    })
+
+    hiddenBtnInsurance.addEventListener('click', () => {
+        hiddenBlockInsurance.style.display = 'none';
+        moreBtnInsurance.style.display = 'block';
     })
 } catch {
     console.log('Элемент не найден на странице');

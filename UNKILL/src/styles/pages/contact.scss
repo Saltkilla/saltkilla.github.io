@@ -20,6 +20,7 @@
     &__frame {
         width: 100%;
         height: inRem(800);
+        border-radius: inRem(30);
     }
 
     @include xs {
